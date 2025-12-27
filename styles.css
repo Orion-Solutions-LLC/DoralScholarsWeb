@@ -900,10 +900,6 @@ main {
   }
 }
 
-/* Hide the default cursor */
-body {
-  cursor: none;
-}
 
 /* Stylus Pointer */
 #stylus-pointer {
