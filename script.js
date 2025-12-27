@@ -57,18 +57,30 @@ if (counters.length > 0) {
 
 const stylus = document.getElementById('stylus-pointer');
 
+// Function to check hover over interactive elements
+function checkHover(e) {
+  const hovered = document.elementFromPoint(e.clientX, e.clientY);
+  if (hovered && (hovered.tagName === 'BUTTON' || hovered.tagName === 'A' || hovered.classList.contains('card'))) {
+    stylus.classList.add('hovering');
+  } else {
+    stylus.classList.remove('hovering');
+  }
+}
+
 document.addEventListener('mousemove', e => {
-  // Move the stylus to the mouse position
+  // Move the stylus
   stylus.style.top = e.clientY + 'px';
   stylus.style.left = e.clientX + 'px';
 
-  // Add temporary movement class for glow effect
+  // Add glow animation
   stylus.classList.add('moving');
   clearTimeout(stylus._timeout);
-  stylus._timeout = setTimeout(() => {
-    stylus.classList.remove('moving');
-  }, 100);
+  stylus._timeout = setTimeout(() => stylus.classList.remove('moving'), 100);
+
+  // Check hover effects
+  checkHover(e);
 });
+
 
 
 
