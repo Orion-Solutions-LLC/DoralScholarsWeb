@@ -528,3 +528,88 @@ main {
     page-break-inside: avoid;
   }
 }
+
+/* Impact Bubbles */
+.impact-bubbles {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.impact-bubble {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--doral-red), var(--doral-burgundy));
+  color: var(--doral-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(226, 24, 51, 0.35);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow pulse */
+.impact-bubble::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.impact-bubble:hover::before {
+  opacity: 1;
+}
+
+.impact-bubble:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(226, 24, 51, 0.6);
+}
+
+.impact-bubble .number {
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 3rem;
+}
+
+.impact-bubble p {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.social-footer {
+  background: var(--doral-black);
+  color: var(--doral-white);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.social-footer p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-6px) scale(1.2);
+  color: var(--doral-yellow);
+}
+
