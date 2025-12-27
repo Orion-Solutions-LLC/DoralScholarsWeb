@@ -1,3 +1,30 @@
+// Ensure background video plays across all browsers
+const heroVideo = document.querySelector('.hero-background-video');
+if (heroVideo) {
+  // Force play for browsers that require user interaction
+  heroVideo.play().catch(error => {
+    // If autoplay fails, try again after a short delay
+    setTimeout(() => {
+      heroVideo.play().catch(() => {
+        console.log('Video autoplay prevented by browser');
+      });
+    }, 100);
+  });
+  
+  // Ensure video is muted (required for autoplay in most browsers)
+  heroVideo.muted = true;
+  
+  // Ensure video loops
+  heroVideo.loop = true;
+  
+  // Handle video loading
+  heroVideo.addEventListener('loadeddata', () => {
+    heroVideo.play().catch(() => {
+      // Silently handle autoplay restrictions
+    });
+  });
+}
+
 // Animated Elements
 const animatedElements = document.querySelectorAll('.slide-up, .fade-in, .zoom-in');
 animatedElements.forEach(el => {
