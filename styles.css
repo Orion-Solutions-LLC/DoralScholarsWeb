@@ -168,17 +168,38 @@ nav a.active {
   position: relative;
 }
 
-.hero h1 {
+.hero-background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+}
+
+.hero-content h1 {
   font-family: 'Dela Gothic One', cursive;
   font-size: 3rem;
   max-width: 800px;
   color: var(--doral-white);
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
   animation: textFloat 4s ease-in-out infinite alternate;
   margin-bottom: 1.5rem;
 }
 
-.hero p {
+.hero-content p {
   font-family: 'DM Sans', sans-serif;
   font-size: 1.3rem;
   max-width: 600px;
@@ -187,6 +208,7 @@ nav a.active {
   opacity: 0.95;
   animation: fadeInUp 1.5s ease forwards;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
 @keyframes gradientShift {
