@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doral Scholars - Events</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Doral Scholars Program Logo">
+        </a>
+      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Learn about us</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 class="fade-in">Youth Development Program</h1>
+      <p class="fade-in delay">
+        A safe, supportive, and enriching environment fostering positive development, conflict resolution skills, and community engagement.
+      </p>
+    </section>
+
+    <!-- Program Goal & Structure -->
+    <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+      <div class="page-content">
+        <h2>Program Goal</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          To provide a safe, supportive, and enriching environment for youth, fostering positive development, conflict resolution skills, and community engagement to prevent violence and crime.
+        </p>
+
+        <h2>Program Structure</h2>
+        <p>
+          Each month focuses on a specific theme, with weekly activities building upon that theme. Activities include workshops, discussions, creative projects, physical activities, and community service opportunities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dynamic Events (Admin-managed) -->
+    <section id="dynamic-events-section" style="padding: 2rem; max-width: 1200px; margin: 0 auto; display: none;">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Upcoming Events</h2>
+      <div id="dynamic-events"></div>
+    </section>
+
+    <!-- Monthly Programs (Default Content) -->
+    <section id="monthly-programs" style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Monthly Program Calendar</h2>
+
+      <!-- January -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">January: "Fresh Start, Safe Start" & "Resilience in Unity"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          Kick off the new year by focusing on goal setting, community resilience, and creating a safe environment. Participants will learn conflict resolution techniques, create personal and community vision boards, and engage in team-building activities to strengthen community bonds. We will explore what resilience means, and hear stories from community members who have overcome adversity.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Goal-setting workshops</li>
+          <li>Conflict resolution skill-building</li>
+          <li>Community vision board creation</li>
+          <li>Resilience storytelling and discussions</li>
+        </ul>
+      </div>
+
+      <!-- February -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">February: "Love Our Community" & "Healthy Relationships Matter"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          This month emphasizes the importance of healthy relationships and community care. Participants will learn about healthy communication, respect, and boundaries, and engage in community service projects to show their love for their neighborhood. We will also focus on recognizing and addressing unhealthy relationship dynamics.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Healthy relationship workshops</li>
+          <li>Community service projects (e.g., park cleanups, assisting seniors)</li>
+          <li>Role-playing scenarios for conflict resolution</li>
+          <li>Discussions on positive communication</li>
+        </ul>
+      </div>
+
+      <!-- March -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">March: "Spring Into Action" & "Empowerment Through Education"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          As spring arrives, we'll focus on taking action for positive change and empowering youth through education. Participants will participate in community improvement projects, learn about job skills and financial literacy, and explore opportunities for personal development.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Community garden planting or clean-up events</li>
+          <li>Financial literacy workshops</li>
+          <li>Job skills training (e.g., resume writing, interview skills)</li>
+          <li>Educational guest speakers</li>
+        </ul>
+      </div>
+
+      <!-- April -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">April: "Violence Prevention Awareness Month" & "Healing and Hope"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          April focuses on raising awareness about violence prevention and providing support for those affected by violence. Participants will engage in educational campaigns, learn about bystander intervention, and participate in healing circles and art therapy sessions.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Violence prevention awareness campaigns</li>
+          <li>Bystander intervention training</li>
+          <li>Art therapy sessions</li>
+          <li>Support group discussions</li>
+        </ul>
+      </div>
+
+      <!-- May -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">May: "Celebrating Community Diversity" & "Building Bridges"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          This month celebrates the diversity of our community and focuses on building bridges between different groups. Participants will engage in multicultural activities, learn about different cultures, and participate in intergenerational activities.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Multicultural arts and crafts</li>
+          <li>Cultural exchange presentations</li>
+          <li>Intergenerational activities (e.g., games, storytelling)</li>
+          <li>Community potluck with diverse foods</li>
+        </ul>
+      </div>
+
+      <!-- June -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">June: "Youth Voices, Strong Choices" & "Safe Summer Initiatives"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          June focuses on empowering youth to make positive choices and promoting safe summer activities. Participants will engage in youth leadership training, participate in recreational activities, and learn about conflict resolution strategies for the summer months.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Youth leadership workshops</li>
+          <li>Recreational activities (e.g., sports, games)</li>
+          <li>Conflict resolution workshops for summer safety</li>
+          <li>Planning safe summer activities</li>
+        </ul>
+      </div>
+
+      <!-- July -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">July: "Community Independence Day" & "United We Stand"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          July celebrates freedom from violence, and the strength of the community. Activities will promote unity, and community spirit.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Community picnic</li>
+          <li>Talent show</li>
+          <li>Team building sports and games</li>
+          <li>Community art project</li>
+        </ul>
+      </div>
+
+      <!-- August -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">August: "Growth Through Learning" & "Safe Routes, Safe Schools"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          August focuses on preparing for the school year, promoting lifelong learning, and emphasizing safe routes to school. Participants will receive back-to-school supplies, participate in educational workshops, and learn about school safety.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Back-to-school supply distribution</li>
+          <li>Educational workshops (e.g., study skills, time management)</li>
+          <li>School safety workshops</li>
+          <li>Community safety walks</li>
+        </ul>
+      </div>
+
+      <!-- September -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">September: "International Day of Peace" & "Conflict Resolution Skills"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          September focuses on promoting peace and non-violence. Participants will learn about conflict resolution and mediation, participate in peace-themed activities, and engage in discussions about non-violent communication.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Peace-themed art projects</li>
+          <li>Conflict resolution and mediation training</li>
+          <li>Discussions on non-violent communication</li>
+          <li>Community peace walk</li>
+        </ul>
+      </div>
+
+      <!-- October -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">October: "National Domestic Violence Awareness Month" & "Community Safety Month"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          October focuses on raising awareness about domestic violence and promoting community safety. Participants will learn about domestic violence prevention, participate in safety audits, and learn about personal safety strategies.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Domestic violence awareness campaigns</li>
+          <li>Personal safety workshops</li>
+          <li>Neighborhood safety audits</li>
+          <li>Guest speakers from community safety organizations</li>
+        </ul>
+      </div>
+
+      <!-- November -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">November: "Gratitude and Giving Back" & "Building Stronger Families"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          November focuses on gratitude, giving back, and strengthening families. Participants will engage in community service projects, participate in family-oriented activities, and learn about parenting resources.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Food and clothing drives</li>
+          <li>Family game nights</li>
+          <li>Parenting workshops</li>
+          <li>Community volunteer opportunities</li>
+        </ul>
+      </div>
+
+      <!-- December -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="color: var(--doral-red);">December: "Hope for the Holidays" & "Community Togetherness"</h3>
+        <p style="margin-bottom: 1.5rem;">
+          December focuses on providing hope and support during the holiday season. Participants will engage in holiday-themed activities, participate in community gatherings, and learn about resources for those in need.
+        </p>
+        <h4>Weekly Activities:</h4>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Holiday gift drives</li>
+          <li>Community holiday celebrations</li>
+          <li>Support group discussions</li>
+          <li>Holiday caroling and light displays</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta fade-in">
+      <h2>Join Our Program</h2>
+      <p>
+        Interested in participating or learning more about our monthly programs? Get in touch with us today.
+      </p>
+      <div style="margin-top: 2rem;">
+        <a href="contact.html" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
+          Contact Us
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Login Form -->
+  <div id="login-container" class="login-container">
+    <form id="login-form" class="login-form">
+      <input type="text" id="login-username" placeholder="Username" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <div id="login-error" class="login-error" style="display: none;"></div>
+    </form>
+  </div>
+
+  <script src="events-data.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
