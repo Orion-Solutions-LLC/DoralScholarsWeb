@@ -899,3 +899,30 @@ main {
     display: none;
   }
 }
+
+/* Hide the default cursor */
+body {
+  cursor: none;
+}
+
+/* Stylus Pointer */
+#stylus-pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 48px;
+  background: linear-gradient(135deg, #E21833, #FFD200);
+  border-radius: 12px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 8px rgba(226, 24, 51, 0.7), 0 0 16px rgba(255, 210, 0, 0.5);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+/* Stylus pointer glow on movement */
+#stylus-pointer.moving {
+  box-shadow: 0 0 12px rgba(226, 24, 51, 0.9), 0 0 24px rgba(255, 210, 0, 0.7);
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+}

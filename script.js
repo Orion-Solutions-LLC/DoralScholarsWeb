@@ -55,5 +55,21 @@ if (counters.length > 0) {
   });
 }
 
+const stylus = document.getElementById('stylus-pointer');
+
+document.addEventListener('mousemove', e => {
+  // Move the stylus to the mouse position
+  stylus.style.top = e.clientY + 'px';
+  stylus.style.left = e.clientX + 'px';
+
+  // Add temporary movement class for glow effect
+  stylus.classList.add('moving');
+  clearTimeout(stylus._timeout);
+  stylus._timeout = setTimeout(() => {
+    stylus.classList.remove('moving');
+  }, 100);
+});
+
+
 
 
