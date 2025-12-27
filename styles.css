@@ -1,188 +1,9 @@
-/* Doral Scholars Program - Brand Style Guide 2025 */
-
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
-
-/* Brand Color Variables */
-:root {
-  /* Primary Colors */
-  --doral-red: #E21833;
-  --doral-yellow: #FFD200;
-  --doral-black: #191919;
-  --doral-burgundy: #880020;
-  
-  /* Secondary Colors */
-  --doral-teal: #3C8080;
-  --doral-indigo: #4B0082;
-  --doral-purple: #9D34FF;
-  
-  /* Neutral Colors */
-  --doral-white: #ffffff;
-  --doral-light-gray: #f9f9f9;
-  --doral-gray: #eef3f8;
-}
-
-/* Reset & Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  background: var(--doral-light-gray);
-  color: var(--doral-black);
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Typography Hierarchy */
-
-/* Main Headline - Dela Gothic One, 32pt */
-h1 {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: 32px;
-  color: var(--doral-red);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-/* Section Title - Dela Gothic One, 24pt */
-h2 {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: 24px;
-  color: var(--doral-black);
-  line-height: 1.3;
-  margin-bottom: 1rem;
-  margin-top: 1.5rem;
-}
-
-/* Subheading - DM Sans Bold, 18pt */
-h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--doral-black);
-  margin-bottom: 0.75rem;
-  margin-top: 1.25rem;
-}
-
-h4, h5, h6 {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  color: var(--doral-black);
-  margin-bottom: 0.5rem;
-}
-
-/* Body Copy - DM Sans Regular, 16pt */
-p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--doral-black);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  max-width: 70ch; /* Optimal line length for readability */
-}
-
-/* Emphasis Text - DM Sans Italic, 16pt */
-em {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 400;
-}
-
-/* Caption Text - DM Sans Regular, 14pt */
-.caption,
-figcaption,
-small {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--doral-black);
-  line-height: 1.5;
-}
-
-strong {
-  font-weight: 700;
-}
-
-/* Links */
-a {
-  color: var(--doral-red);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--doral-burgundy);
-}
-
-/* Navigation Bar */
-nav {
-  background: var(--doral-white);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-nav ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  align-items: center;
-}
-
-nav .logo {
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-}
-
-nav .logo img {
-  height: 50px;
-  width: auto;
-  max-width: 200px;
-  object-fit: contain;
-}
-
-nav .logo a {
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-nav a {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--doral-black);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  padding: 0.5rem 0;
-}
-
-nav a:hover {
-  color: var(--doral-red);
-}
-
-nav a.active {
-  color: var(--doral-red);
-  border-bottom: 2px solid var(--doral-red);
-}
-
-/* Hero Section */
+/* --- HERO SECTION WOW --- */
 .hero {
   height: 80vh;
   background: linear-gradient(120deg, var(--doral-red), var(--doral-burgundy));
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
   color: var(--doral-white);
   display: flex;
   flex-direction: column;
@@ -190,583 +11,84 @@ nav a.active {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero h1 {
-  font-family: 'Dela Gothic One', cursive;
   font-size: 3rem;
-  max-width: 800px;
   color: var(--doral-white);
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  animation: textFloat 4s ease-in-out infinite alternate;
 }
 
 .hero p {
-  font-family: 'DM Sans', sans-serif;
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   max-width: 600px;
   color: var(--doral-white);
   font-weight: 400;
+  opacity: 0.95;
+  animation: fadeInUp 1.5s ease forwards;
 }
 
-/* Sections */
-section {
-  padding: 4rem 2rem;
+/* Hero animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-section h2 {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: 24px;
-  color: var(--doral-red);
+@keyframes textFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
 }
 
-/* Highlights & Cards */
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
+/* --- HIGHLIGHTS / CARDS --- */
 .card {
-  background: var(--doral-white);
+  background: linear-gradient(135deg, var(--doral-white), #ffe6e6);
+  border-radius: 20px;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(226, 24, 51, 0.2);
+  transform: translateY(-10px) rotate(-1deg);
+  box-shadow: 0 25px 50px rgba(226, 24, 51, 0.25);
 }
 
-.card h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--doral-red);
-  margin-bottom: 1rem;
-}
-
-.card p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  color: var(--doral-black);
-}
-
-.card ul {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  color: var(--doral-black);
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.card ul li {
-  margin-bottom: 0.5rem;
-}
-
-.card h4 {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--doral-black);
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Impact Section */
-.impact {
-  background: var(--doral-gray);
-  text-align: center;
-}
-
-.impact h2 {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: 24px;
-  color: var(--doral-red);
-}
-
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat span {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: 2rem;
-  font-weight: normal;
-  color: var(--doral-red);
-  display: block;
-}
-
-.stat p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  color: var(--doral-black);
-  margin-top: 0.5rem;
-}
-
-/* Call-to-Action */
-.cta {
-  text-align: center;
-  background: var(--doral-red);
-  color: var(--doral-white);
-  padding: 4rem 2rem;
-}
-
-.cta h2 {
-  font-family: 'Dela Gothic One', cursive;
-  font-size: 24px;
-  color: var(--doral-white);
-}
-
-.cta p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  color: var(--doral-white);
-  max-width: 600px;
-  margin: 1rem auto;
-}
-
-/* Button Styles */
-button,
-.btn {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-primary {
-  background-color: var(--doral-yellow);
-  color: var(--doral-black);
-}
-
-.btn-primary:hover {
-  background-color: var(--doral-red);
-  color: var(--doral-white);
-}
-
-.btn-secondary {
-  background-color: var(--doral-red);
-  color: var(--doral-white);
-}
-
-.btn-secondary:hover {
-  background-color: var(--doral-burgundy);
-}
-
-.btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--doral-red);
-  color: var(--doral-red);
-}
-
-.btn-outline:hover {
-  background-color: var(--doral-red);
-  color: var(--doral-white);
-}
-
-/* Main Content Container */
-main {
-  flex: 1;
-  padding: 2rem;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.page-content {
-  background: var(--doral-white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Animations */
-.fade-in {
+.card::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
   opacity: 0;
-  animation: fadeIn 1s forwards;
+  transform: rotate(45deg);
+  transition: opacity 0.5s ease;
 }
 
-.slide-up {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUp 1s forwards;
+.card:hover::after {
+  opacity: 1;
 }
 
-.zoom-in {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: zoomIn 1s forwards;
-}
-
-.delay { 
-  animation-delay: 0.4s; 
-}
-
-.delay-2 { 
-  animation-delay: 0.8s; 
-}
-
-@keyframes fadeIn {
-  to { 
-    opacity: 1; 
-  }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes zoomIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Utility Classes - Brand Colors */
-.text-red { color: var(--doral-red); }
-.text-yellow { color: var(--doral-yellow); }
-.text-black { color: var(--doral-black); }
-.text-burgundy { color: var(--doral-burgundy); }
-.text-teal { color: var(--doral-teal); }
-.text-indigo { color: var(--doral-indigo); }
-.text-purple { color: var(--doral-purple); }
-.text-white { color: var(--doral-white); }
-
-.bg-red { background-color: var(--doral-red); }
-.bg-yellow { background-color: var(--doral-yellow); }
-.bg-black { background-color: var(--doral-black); }
-.bg-burgundy { background-color: var(--doral-burgundy); }
-.bg-teal { background-color: var(--doral-teal); }
-.bg-indigo { background-color: var(--doral-indigo); }
-.bg-purple { background-color: var(--doral-purple); }
-.bg-white { background-color: var(--doral-white); }
-.bg-gray { background-color: var(--doral-gray); }
-.bg-light-gray { background-color: var(--doral-light-gray); }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 28px;
-  }
-  
-  h2 {
-    font-size: 20px;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
-  
-  nav {
-    padding: 1rem;
-  }
-  
-  nav ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  
-  nav .logo img {
-    height: 40px;
-  }
-  
-  .stats {
-    gap: 2rem;
-  }
-  
-  section {
-    padding: 2rem 1rem;
-  }
-}
-
-/* Accessibility - Ensure WCAG 2.1 AA compliance */
-:focus {
-  outline: 2px solid var(--doral-yellow);
-  outline-offset: 2px;
-}
-
-/* Login Form */
-.login-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--doral-white);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 1000;
-  max-width: 300px;
-  font-size: 14px;
-}
-
-.login-container.hidden {
-  display: none;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.login-form input {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-}
-
-.login-form button {
-  padding: 0.5rem;
-  background: var(--doral-red);
-  color: var(--doral-white);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.login-form button:hover {
-  background: var(--doral-burgundy);
-}
-
-.login-error {
-  color: var(--doral-red);
-  font-size: 12px;
-  margin-top: 0.25rem;
-}
-
-/* Admin Styles */
-.admin-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.admin-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--doral-red);
-}
-
-.admin-header h1 {
-  margin: 0;
-}
-
-.logout-btn {
-  padding: 0.75rem 1.5rem;
-  background: var(--doral-burgundy);
-  color: var(--doral-white);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-}
-
-.logout-btn:hover {
-  background: var(--doral-red);
-}
-
-.events-list {
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.event-item {
-  background: var(--doral-white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-left: 4px solid var(--doral-red);
-}
-
-.event-item:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.event-item h3 {
-  margin: 0 0 0.5rem 0;
-  color: var(--doral-red);
-}
-
-.event-item .event-date {
-  color: var(--doral-black);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.event-item .event-preview {
-  color: #666;
-  font-size: 14px;
-}
-
-.add-event-btn {
-  padding: 1rem 2rem;
-  background: var(--doral-yellow);
-  color: var(--doral-black);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  margin-bottom: 2rem;
-}
-
-.add-event-btn:hover {
-  background: var(--doral-red);
-  color: var(--doral-white);
-}
-
-.event-form {
-  background: var(--doral-white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  margin-bottom: 2rem;
-}
-
-.event-form.hidden {
-  display: none;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  color: var(--doral-black);
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.form-actions button {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.btn-save {
-  background: var(--doral-red);
-  color: var(--doral-white);
-}
-
-.btn-save:hover {
-  background: var(--doral-burgundy);
-}
-
-.btn-cancel {
-  background: #ddd;
-  color: var(--doral-black);
-}
-
-.btn-cancel:hover {
-  background: #bbb;
-}
-
-.btn-delete {
-  background: #dc3545;
-  color: var(--doral-white);
-}
-
-.btn-delete:hover {
-  background: #c82333;
-}
-
-/* Print Styles */
-@media print {
-  nav {
-    position: static;
-    box-shadow: none;
-  }
-  
-  .hero {
-    height: auto;
-    page-break-after: always;
-  }
-  
-  .card {
-    page-break-inside: avoid;
-  }
-  
-  .login-container {
-    display: none;
-  }
-}
-
-/* Impact Bubbles */
+/* --- IMPACT BUBBLES --- */
 .impact-bubbles {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 3rem;
   flex-wrap: wrap;
   margin-top: 3rem;
+  perspective: 1000px;
 }
 
 .impact-bubble {
@@ -779,68 +101,92 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 40px rgba(226, 24, 51, 0.35);
+  box-shadow: 0 20px 50px rgba(226,24,51,0.5);
   cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Glow pulse */
-.impact-bubble::before {
-  content: "";
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.impact-bubble:hover::before {
-  opacity: 1;
-}
-
 .impact-bubble:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 30px 60px rgba(226, 24, 51, 0.6);
+  transform: translateY(-15px) scale(1.1) rotateZ(5deg);
+  box-shadow: 0 35px 70px rgba(226,24,51,0.6);
+}
+
+.impact-bubble::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+  top: -50%;
+  left: -50%;
+  animation: bubbleGlow 2s infinite alternate;
+}
+
+@keyframes bubbleGlow {
+  0% { transform: scale(1); opacity: 0.5;}
+  100% { transform: scale(1.2); opacity: 1;}
 }
 
 .impact-bubble .number {
-  font-family: 'Dela Gothic One', cursive;
   font-size: 3rem;
+  font-family: 'Dela Gothic One', cursive;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
 }
 
 .impact-bubble p {
-  margin-top: 0.75rem;
-  text-align: center;
+  margin-top: 0.5rem;
   font-size: 1rem;
-}
-
-.social-footer {
-  background: var(--doral-black);
-  color: var(--doral-white);
   text-align: center;
-  padding: 3rem 1rem;
+  transition: color 0.3s ease;
 }
 
-.social-footer p {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-icons a {
-  font-size: 1.8rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-  transform: translateY(-6px) scale(1.2);
+.impact-bubble:hover p {
   color: var(--doral-yellow);
 }
 
+/* --- SOCIAL FOOTER --- */
+.social-icons a {
+  font-size: 2rem;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-10px) rotate(-10deg) scale(1.3);
+  color: var(--doral-yellow);
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+}
+
+/* --- LOGIN FORM POP --- */
+.login-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(226,24,51,0.3);
+}
+
+/* --- GENERAL INTERACTIVITY --- */
+.card, .impact-bubble, .btn, .social-icons a {
+  will-change: transform;
+}
+
+/* --- MOBILE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .impact-bubble {
+    width: 180px;
+    height: 180px;
+  }
+  .impact-bubble .number {
+    font-size: 2.5rem;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
