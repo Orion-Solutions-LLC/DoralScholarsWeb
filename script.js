@@ -4,7 +4,7 @@ animatedElements.forEach(el => {
   el.style.animationPlayState = 'paused';
 });
 
-// Intersection Observer
+// Intersection Observer for animations
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
@@ -12,46 +12,48 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.1 });
 
 animatedElements.forEach(el => observer.observe(el));
 
 // Impact Bubble Count Up
 const counters = document.querySelectorAll('.impact-bubble');
 
-counters.forEach(bubble => {
-  const numberEl = bubble.querySelector('.number');
-  const target = +bubble.dataset.value;
-  let count = 0;
-  const increment = Math.max(1, Math.floor(target / 50));
-  const update = () => {
-    count += increment;
-    if(count >= target) {
-      numberEl.textContent = target + (target > 1 ? '+' : '');
-    } else {
-      numberEl.textContent = count;
-      requestAnimationFrame(update);
-    }
-  };
-  observer.observe(bubble);
-  bubble.addEventListener('mouseenter', () => {
-    bubble.style.transform += ' rotateY(15deg)';
-  });
-  bubble.addEventListener('mouseleave', () => {
-    bubble.style.transform = bubble.style.transform.replace(' rotateY(15deg)','');
-  });
-  update();
-});
+if (counters.length > 0) {
+  const bubbleObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        const bubble = entry.target;
+        const numberEl = bubble.querySelector('.number');
+        if (numberEl && !bubble.dataset.animated) {
+          bubble.dataset.animated = 'true';
+          const target = +bubble.dataset.value;
+          let count = 0;
+          const increment = Math.max(1, Math.floor(target / 50));
+          const duration = 2000; // 2 seconds
+          const steps = 50;
+          const stepTime = duration / steps;
+          
+          const update = () => {
+            count += increment;
+            if(count >= target) {
+              numberEl.textContent = target + (target > 1 ? '+' : '');
+            } else {
+              numberEl.textContent = count;
+              setTimeout(update, stepTime);
+            }
+          };
+          update();
+        }
+        bubbleObserver.unobserve(bubble);
+      }
+    });
+  }, { threshold: 0.5 });
 
-// Mouse Parallax Effect on Bubbles
-document.addEventListener('mousemove', e => {
-  document.querySelectorAll('.impact-bubble').forEach(bubble => {
-    const rect = bubble.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    bubble.style.transform = `translate(${x*0.02}px, ${y*0.02}px) scale(1.05)`;
+  counters.forEach(bubble => {
+    bubbleObserver.observe(bubble);
   });
-});
+}
 
 
 
