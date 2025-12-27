@@ -186,29 +186,39 @@ nav a.active {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
   font-family: 'Dela Gothic One', cursive;
-  font-size: 3rem;
-  max-width: 800px;
+  font-size: 3.5rem;
+  max-width: 900px;
   color: var(--doral-white);
   text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
   animation: textFloat 4s ease-in-out infinite alternate;
   margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
 }
 
 .hero-content p {
   font-family: 'DM Sans', sans-serif;
-  font-size: 1.3rem;
-  max-width: 600px;
+  font-size: 1.5rem;
+  max-width: 700px;
   color: var(--doral-white);
   font-weight: 400;
   opacity: 0.95;
   animation: fadeInUp 1.5s ease forwards;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  text-align: center;
+  width: 100%;
 }
 
 @keyframes gradientShift {
@@ -850,12 +860,12 @@ main {
     font-size: 20px;
   }
   
-  .hero h1 {
-    font-size: 2.2rem;
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
   
-  .hero p {
-    font-size: 1rem;
+  .hero-content p {
+    font-size: 1.2rem;
   }
   
   nav {
