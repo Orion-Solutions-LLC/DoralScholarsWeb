@@ -512,6 +512,233 @@ main {
   outline-offset: 2px;
 }
 
+/* Login Form */
+.login-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--doral-white);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  max-width: 300px;
+  font-size: 14px;
+}
+
+.login-container.hidden {
+  display: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-form input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+
+.login-form button {
+  padding: 0.5rem;
+  background: var(--doral-red);
+  color: var(--doral-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.login-form button:hover {
+  background: var(--doral-burgundy);
+}
+
+.login-error {
+  color: var(--doral-red);
+  font-size: 12px;
+  margin-top: 0.25rem;
+}
+
+/* Admin Styles */
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--doral-red);
+}
+
+.admin-header h1 {
+  margin: 0;
+}
+
+.logout-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--doral-burgundy);
+  color: var(--doral-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background: var(--doral-red);
+}
+
+.events-list {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.event-item {
+  background: var(--doral-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--doral-red);
+}
+
+.event-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.event-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--doral-red);
+}
+
+.event-item .event-date {
+  color: var(--doral-black);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.event-item .event-preview {
+  color: #666;
+  font-size: 14px;
+}
+
+.add-event-btn {
+  padding: 1rem 2rem;
+  background: var(--doral-yellow);
+  color: var(--doral-black);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+
+.add-event-btn:hover {
+  background: var(--doral-red);
+  color: var(--doral-white);
+}
+
+.event-form {
+  background: var(--doral-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom: 2rem;
+}
+
+.event-form.hidden {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  color: var(--doral-black);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.btn-save {
+  background: var(--doral-red);
+  color: var(--doral-white);
+}
+
+.btn-save:hover {
+  background: var(--doral-burgundy);
+}
+
+.btn-cancel {
+  background: #ddd;
+  color: var(--doral-black);
+}
+
+.btn-cancel:hover {
+  background: #bbb;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: var(--doral-white);
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
 /* Print Styles */
 @media print {
   nav {
@@ -526,6 +753,10 @@ main {
   
   .card {
     page-break-inside: avoid;
+  }
+  
+  .login-container {
+    display: none;
   }
 }
 
