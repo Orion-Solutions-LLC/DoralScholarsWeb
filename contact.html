@@ -23,11 +23,12 @@
   </nav>
   
   <main>
-    <div class="page-content" style="max-width: 800px; margin: 0 auto;">
+    <div class="page-content" style="max-width: 1200px; margin: 0 auto;">
       <h1>Contact Us</h1>
       <p style="margin-bottom: 2rem;">Get in touch with us! Fill out the form below to ask for more information or to get involved with Doral Scholars.</p>
       
-      <form id="contact-form" class="contact-form">
+      <div style="display: flex; gap: 3rem; align-items: flex-start;">
+        <form id="contact-form" class="contact-form" style="flex: 1;">
         <div class="form-group">
           <label for="contact-name">Name *</label>
           <input type="text" id="contact-name" name="name" required placeholder="Your full name">
@@ -70,12 +71,21 @@
         
         <div id="contact-form-message" class="contact-form-message" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 4px; text-align: center;"></div>
       </form>
+
+      <!-- Drummerbot Image -->
+      <div style="flex: 0 0 350px; display: flex; align-items: center; justify-content: center;">
+        <img 
+          src="assets/drummerbot.jpeg" 
+          alt="Doral Scholars" 
+          style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);"
+        >
+      </div>
     </div>
   </main>
 
   <!-- SOCIAL FOOTER -->
   <footer class="social-footer">
-    <button class="connect-btn">Connect With Us</button>
+    <a href="contact.html" class="connect-btn">Connect With Us</a>
     <div class="social-icons">
       <a href="#" aria-label="Instagram">📸</a>
       <a href="#" aria-label="Facebook">📘</a>
