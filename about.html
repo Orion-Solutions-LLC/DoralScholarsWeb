@@ -58,40 +58,76 @@
       </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="impact" style="padding: 4rem 2rem;">
-      <h2 style="text-align: center; color: var(--doral-red); margin-bottom: 2rem;">By getting involved, you'll help us:</h2>
-      
-      <div class="highlights" style="max-width: 1200px; margin: 0 auto;">
-        <div class="card slide-up">
-          <h3>Clearly express who we are</h3>
-          <p>
-            Help us articulate our identity and the reasons we exist as an organization.
-          </p>
+    
+
+
+    <script>
+      const slides = document.querySelectorAll('.slide');
+      const nextBtn = document.querySelector('.slider-btn.next');
+      const prevBtn = document.querySelector('.slider-btn.prev');
+
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      });
+    </script>
+
+
+
+
+    <!-- Benefits Slider Section -->
+    <section class="impact">
+      <h2 class="impact-title">By getting involved, you'll help us:</h2>
+
+      <div class="slider">
+        <button class="slider-btn prev" aria-label="Previous slide">‹</button>
+
+        <div class="slider-track">
+          <div class="slide active">
+            <h3>Clearly express who we are</h3>
+            <p>
+              Help us articulate our identity and the reasons we exist as an organization.
+            </p>
+          </div>
+
+          <div class="slide">
+            <h3>Show how our programs fit together</h3>
+            <p>
+              Demonstrate how our programs create a comprehensive support system for the whole student.
+            </p>
+          </div>
+
+          <div class="slide">
+            <h3>Communicate our mission</h3>
+            <p>
+              Share our purpose in a way that resonates with families, partners, and supporters.
+            </p>
+          </div>
+
+          <div class="slide">
+            <h3>Build an authentic presence</h3>
+            <p>
+              Create an online presence that feels authentic, welcoming, and impactful.
+            </p>
+          </div>
         </div>
 
-        <div class="card slide-up delay">
-          <h3>Show how our programs fit together</h3>
-          <p>
-            Demonstrate how our programs create a comprehensive support system for the whole student.
-          </p>
-        </div>
-
-        <div class="card slide-up delay-2">
-          <h3>Communicate our mission</h3>
-          <p>
-            Share our purpose in a way that resonates with families, partners, and supporters.
-          </p>
-        </div>
-
-        <div class="card slide-up delay-2">
-          <h3>Build an authentic presence</h3>
-          <p>
-            Create an online presence that feels authentic, welcoming, and impactful.
-          </p>
-        </div>
+        <button class="slider-btn next" aria-label="Next slide">›</button>
       </div>
     </section>
+
 
     <!-- Call to Action Section -->
     <section style="padding: 4rem 2rem; background: var(--doral-white);">
