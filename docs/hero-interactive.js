@@ -1,17 +1,19 @@
 // Interactive Hero Page Effects
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Scroll progress indicator - positioned under navigation
+  // Scroll progress indicator - positioned above navigation
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
   document.body.appendChild(progressBar);
   
-  // Calculate nav height and position progress bar accordingly
-  const nav = document.querySelector('nav');
-  if (nav) {
-    const navHeight = nav.offsetHeight;
-    progressBar.style.top = navHeight + 'px';
-  }
+  // Background color variables
+  const bgColors = {
+    start: '#fef5f6',      // --doral-bg-off-red
+    light: '#fdf0f2',      // --doral-bg-light-red
+    warm: '#fef8f9',       // --doral-bg-warm
+    mid: '#fce8eb',       // Medium red tint
+    deep: '#f9d5da'       // Deeper red tint
+  };
 
   let lastScroll = 0;
   let ticking = false;
@@ -22,12 +24,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollPercent = (scrollTop / scrollHeight) * 100;
     progressBar.style.width = scrollPercent + '%';
 
+    // Change background color based on scroll position
+    const scrollRatio = Math.min(scrollTop / scrollHeight, 1);
+    let bgColor;
+    
+    if (scrollRatio < 0.25) {
+      // Start: light off-red
+      bgColor = bgColors.start;
+    } else if (scrollRatio < 0.5) {
+      // Transition to light red
+      const t = (scrollRatio - 0.25) / 0.25;
+      bgColor = interpolateColor(bgColors.start, bgColors.light, t);
+    } else if (scrollRatio < 0.75) {
+      // Transition to medium red
+      const t = (scrollRatio - 0.5) / 0.25;
+      bgColor = interpolateColor(bgColors.light, bgColors.mid, t);
+    } else {
+      // Transition to deeper red, then back
+      const t = (scrollRatio - 0.75) / 0.25;
+      if (t < 0.5) {
+        bgColor = interpolateColor(bgColors.mid, bgColors.deep, t * 2);
+      } else {
+        bgColor = interpolateColor(bgColors.deep, bgColors.mid, (t - 0.5) * 2);
+      }
+    }
+    
+    document.body.style.backgroundColor = bgColor;
+    
+    // Also update nav background to match
+    const nav = document.querySelector('nav');
+    if (nav) {
+      nav.style.backgroundColor = bgColor;
+    }
+
     // Change hero background opacity based on scroll
     const hero = document.querySelector('.hero');
     if (hero) {
       const heroHeight = hero.offsetHeight;
-      const scrollRatio = Math.min(scrollTop / heroHeight, 1);
-      hero.style.opacity = 1 - scrollRatio * 0.3;
+      const heroScrollRatio = Math.min(scrollTop / heroHeight, 1);
+      hero.style.opacity = 1 - heroScrollRatio * 0.3;
     }
 
     // Fade in sections as they come into view
@@ -37,12 +72,32 @@ document.addEventListener('DOMContentLoaded', function() {
       const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
       
       if (isVisible) {
-        const scrollPercent = Math.max(0, Math.min(100, (window.innerHeight - rect.top) / window.innerHeight * 100));
-        section.style.opacity = Math.min(1, scrollPercent / 50);
+        const sectionScrollPercent = Math.max(0, Math.min(100, (window.innerHeight - rect.top) / window.innerHeight * 100));
+        section.style.opacity = Math.min(1, sectionScrollPercent / 50);
       }
     });
 
     ticking = false;
+  }
+  
+  // Color interpolation helper function
+  function interpolateColor(color1, color2, factor) {
+    const hex1 = color1.replace('#', '');
+    const hex2 = color2.replace('#', '');
+    
+    const r1 = parseInt(hex1.substring(0, 2), 16);
+    const g1 = parseInt(hex1.substring(2, 4), 16);
+    const b1 = parseInt(hex1.substring(4, 6), 16);
+    
+    const r2 = parseInt(hex2.substring(0, 2), 16);
+    const g2 = parseInt(hex2.substring(2, 4), 16);
+    const b2 = parseInt(hex2.substring(4, 6), 16);
+    
+    const r = Math.round(r1 + (r2 - r1) * factor);
+    const g = Math.round(g1 + (g2 - g1) * factor);
+    const b = Math.round(b1 + (b2 - b1) * factor);
+    
+    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
   }
 
   function requestTick() {
