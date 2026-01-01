@@ -5,5 +5,5 @@ Allow: /
 Disallow: /admin.html
 
 # Sitemap location
-Sitemap: https://yourusername.github.io/DoralScholarsWeb/sitemap.xml
+Sitemap: https://orion-solutions-llc.github.io/DoralScholarsWeb/sitemap.xml
 
