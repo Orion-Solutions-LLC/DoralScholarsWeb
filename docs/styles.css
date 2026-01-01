@@ -103,6 +103,7 @@ nav {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
 nav ul {
@@ -179,7 +180,7 @@ nav a.active {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   border-radius: 8px;
   min-width: 220px;
-  max-width: 300px;
+  max-width: 280px;
   padding: 0.5rem 0;
   margin-top: 0.5rem;
   opacity: 0;
@@ -188,8 +189,51 @@ nav a.active {
   transition: all 0.3s ease;
   z-index: 1000;
   list-style: none;
-  overflow: visible;
-  white-space: nowrap;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.dropdown-menu li {
+  display: block;
+  width: 100%;
+}
+
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Ensure dropdowns don't extend past screen on right side */
+.nav-item-dropdown:last-of-type .dropdown-menu,
+.nav-item-dropdown:nth-last-child(2) .dropdown-menu,
+.nav-item-dropdown:nth-last-child(3) .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* Smart dropdown positioning - prevent overflow */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-item-dropdown .dropdown-menu {
+  max-width: min(280px, calc(100vw - 2rem));
+}
+
+/* Responsive dropdown positioning */
+@media (max-width: 1200px) {
+  .nav-item-dropdown .dropdown-menu {
+    max-width: 250px;
+  }
+  
+  /* Right-align dropdowns for items near the end */
+  nav ul li:nth-last-child(-n+4).nav-item-dropdown .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
 }
 
 .nav-item-dropdown:hover .dropdown-menu {
@@ -241,14 +285,20 @@ nav .contact-btn {
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(60, 128, 128, 0.4);
   border: 2px solid var(--doral-teal);
+  border-bottom: none;
 }
 
-nav .contact-btn:hover {
+nav .contact-btn:hover,
+nav .contact-btn.active {
   background: var(--doral-indigo);
   color: var(--doral-white);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(75, 0, 130, 0.5);
   border-color: var(--doral-indigo);
+}
+
+nav .contact-btn.active {
+  border-bottom: 2px solid var(--doral-indigo);
 }
 
 /* Donate Button in Navigation */
@@ -272,7 +322,7 @@ nav .donate-btn:hover {
   border-color: var(--doral-red);
 }
 
-/* Hero Section */
+/* Hero Section - Full height for home page only */
 .hero {
   height: 100vh;
   min-height: 600px;
@@ -288,6 +338,30 @@ nav .donate-btn:hover {
   padding: 2rem;
   overflow: hidden;
   position: relative;
+}
+
+/* Page Header - Simple header for non-home pages */
+.page-header {
+  background: linear-gradient(120deg, var(--doral-red), var(--doral-burgundy));
+  color: var(--doral-white);
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.page-header h1 {
+  color: var(--doral-white);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.page-header p {
+  color: var(--doral-white);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
 /* Scroll indicator */
@@ -308,16 +382,17 @@ nav .donate-btn:hover {
   50% { opacity: 1; transform: translateX(-50%) translateY(10px); }
 }
 
-/* Scroll progress line */
+/* Scroll progress line - positioned under navigation */
 .scroll-progress {
   position: fixed;
-  top: 0;
+  top: 0; /* Will be set dynamically by JavaScript */
   left: 0;
   width: 0%;
   height: 4px;
   background: linear-gradient(90deg, var(--doral-red), var(--doral-yellow));
-  z-index: 9999;
+  z-index: 99; /* Below nav (100) but above content */
   transition: width 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .hero-background-video {

@@ -1,10 +1,17 @@
 // Interactive Hero Page Effects
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Scroll progress indicator
+  // Scroll progress indicator - positioned under navigation
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
   document.body.appendChild(progressBar);
+  
+  // Calculate nav height and position progress bar accordingly
+  const nav = document.querySelector('nav');
+  if (nav) {
+    const navHeight = nav.offsetHeight;
+    progressBar.style.top = navHeight + 'px';
+  }
 
   let lastScroll = 0;
   let ticking = false;
