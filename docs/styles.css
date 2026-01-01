@@ -179,6 +179,7 @@ nav a.active {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   border-radius: 8px;
   min-width: 220px;
+  max-width: 300px;
   padding: 0.5rem 0;
   margin-top: 0.5rem;
   opacity: 0;
@@ -187,12 +188,27 @@ nav a.active {
   transition: all 0.3s ease;
   z-index: 1000;
   list-style: none;
+  overflow: visible;
+  white-space: nowrap;
 }
 
 .nav-item-dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* Fix dropdown cutoff */
+nav {
+  overflow: visible;
+}
+
+nav ul {
+  overflow: visible;
+}
+
+nav li {
+  overflow: visible;
 }
 
 .dropdown-menu li {
@@ -214,6 +230,27 @@ nav a.active {
   padding-left: 2rem;
 }
 
+/* Contact Button in Navigation */
+nav .contact-btn {
+  background: var(--doral-teal);
+  color: var(--doral-white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(60, 128, 128, 0.4);
+  border: 2px solid var(--doral-teal);
+}
+
+nav .contact-btn:hover {
+  background: var(--doral-indigo);
+  color: var(--doral-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(75, 0, 130, 0.5);
+  border-color: var(--doral-indigo);
+}
+
 /* Donate Button in Navigation */
 nav .donate-btn {
   background: var(--doral-yellow);
@@ -221,7 +258,7 @@ nav .donate-btn {
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
   font-weight: 700;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(255, 210, 0, 0.4);
   border: 2px solid var(--doral-yellow);
@@ -237,8 +274,8 @@ nav .donate-btn:hover {
 
 /* Hero Section */
 .hero {
-  height: 80vh;
-  min-height: 500px;
+  height: 100vh;
+  min-height: 600px;
   background: linear-gradient(120deg, var(--doral-red), var(--doral-burgundy));
   background-size: 400% 400%;
   animation: gradientShift 12s ease infinite;
@@ -251,6 +288,36 @@ nav .donate-btn:hover {
   padding: 2rem;
   overflow: hidden;
   position: relative;
+}
+
+/* Scroll indicator */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: var(--doral-yellow);
+  animation: scrollIndicator 2s ease-in-out infinite;
+}
+
+@keyframes scrollIndicator {
+  0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(10px); }
+}
+
+/* Scroll progress line */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--doral-red), var(--doral-yellow));
+  z-index: 9999;
+  transition: width 0.1s ease;
 }
 
 .hero-background-video {
@@ -359,6 +426,25 @@ nav .donate-btn:hover {
 /* Sections */
 section {
   padding: 4rem 2rem;
+  position: relative;
+  transition: background-color 0.5s ease;
+}
+
+/* Smooth section transitions */
+section:nth-child(even) {
+  background: var(--doral-light-gray);
+}
+
+section:nth-child(odd) {
+  background: var(--doral-white);
+}
+
+/* Parallax effect on scroll */
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Highlights & Cards */
