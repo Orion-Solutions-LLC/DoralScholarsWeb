@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doral Scholars</title>
+  <title>Doral Scholars - Empowering Youth Through Education</title>
+  <meta name="description" content="Doral Scholars provides comprehensive youth development programs including academic support, mentorship, career readiness, and family engagement for students and families.">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="scroll-progress" id="scroll-progress"></div>
 
   <!-- NAVIGATION -->
   <nav>
@@ -24,9 +26,7 @@
           <li><a href="barrier-removal.html#emergency-services">Emergency Services</a></li>
           <li><a href="barrier-removal.html#crisis-support">Crisis Support</a></li>
           <li><a href="barrier-removal.html#housing-assistance">Housing Assistance</a></li>
-          <li><a href="barrier-removal.html#utility-assistance">Utility Assistance</a></li>
           <li><a href="barrier-removal.html#food-security">Food Security</a></li>
-          <li><a href="barrier-removal.html#emergency-transportation">Emergency Transportation</a></li>
         </ul>
       </li>
       <li class="nav-item-dropdown">
@@ -35,241 +35,282 @@
           <li><a href="programs.html#academic">Academic Programs</a></li>
           <li><a href="programs.html#workforce">Workforce Development</a></li>
           <li><a href="programs.html#college">College & Career</a></li>
-          <li><a href="programs.html#support">Youth Support Services</a></li>
-          <li><a href="programs.html#enrichment">Enrichment Programs</a></li>
-          <li><a href="programs.html#wellness">Health & Wellness</a></li>
           <li><a href="programs.html#leadership">Youth Leadership</a></li>
+          <li><a href="programs.html#wellness">Health & Wellness</a></li>
           <li><a href="programs.html#family">Family Support</a></li>
-        </ul>
-      </li>
-      <li class="nav-item-dropdown">
-        <a href="resources.html">Resources</a>
-        <ul class="dropdown-menu">
-          <li><a href="resources.html#healthcare">Healthcare Network</a></li>
-          <li><a href="resources.html#professional-services">Professional Services</a></li>
-          <li><a href="resources.html#support-programs">Support Programs</a></li>
-          <li><a href="resources.html#community-resources">Community Resources</a></li>
-          <li><a href="resources.html#provider-directory">Provider Directory</a></li>
         </ul>
       </li>
       <li class="nav-item-dropdown">
         <a href="community.html">Community</a>
         <ul class="dropdown-menu">
           <li><a href="community.html#success-stories">Success Stories</a></li>
-          <li><a href="community.html#testimonials">Client Testimonials</a></li>
+          <li><a href="community.html#testimonials">Testimonials</a></li>
           <li><a href="community.html#program-impact">Program Impact</a></li>
-          <li><a href="community.html#partner-highlights">Partner Highlights</a></li>
-          <li><a href="community.html#annual-impact">Annual Impact</a></li>
-        </ul>
-      </li>
-      <li class="nav-item-dropdown">
-        <a href="get-involved.html">Get Involved</a>
-        <ul class="dropdown-menu">
-          <li><a href="get-involved.html#student-registration">Student Registration</a></li>
-          <li><a href="get-involved.html#parent-registration">Parent Registration</a></li>
-          <li><a href="get-involved.html#school-partnerships">School Partnerships</a></li>
-          <li><a href="get-involved.html#volunteer">Volunteer Opportunities</a></li>
-          <li><a href="get-involved.html#donate">Donation Programs</a></li>
-          <li><a href="get-involved.html#partnerships">Partnership Options</a></li>
         </ul>
       </li>
       <li><a href="events.html">Events</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html" class="contact-btn">Contact</a></li>
-      <li><a href="https://paypal.com" target="_blank" rel="noopener noreferrer" class="donate-btn">Donate</a></li>
+      <li><a href="get-involved.html#donate" class="donate-btn">Donate</a></li>
     </ul>
   </nav>
 
   <!-- HERO SECTION -->
   <section class="hero">
     <video autoplay loop muted playsinline class="hero-background-video" preload="auto">
-      <!-- MP4 for Chrome, Firefox, Edge, and most browsers -->
       <source src="assets/videos/6ff0c5e16a504fcaa0ff3d9b18fc1795.MP4" type="video/mp4">
-      <!-- QuickTime for Safari -->
       <source src="assets/videos/backgroundvideo.mov" type="video/quicktime">
-      <!-- Fallback message -->
-      Your browser does not support the video tag.
     </video>
     <div class="hero-content">
-      <h1 class="fade-in">Leave Different—stronger in school, steadier in life, surrounded by support.</h1>
-      <p class="fade-in delay" style="font-size: 1.5rem; max-width: 800px;">
-        Programs, mentors, and resources that turn pressure into progress for students and families.
-      </p>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
-        <a href="programs.html" class="btn btn-primary fade-in delay-2">Find My Path</a>
-        <a href="events.html" class="btn btn-secondary fade-in delay-2">See Upcoming Events</a>
+      <h1>Leave Different—stronger in school, steadier in life, surrounded by support.</h1>
+      <p>Programs, mentors, and resources that turn pressure into progress for students and families.</p>
+      <div class="hero-cta">
+        <a href="programs.html" class="btn btn-primary btn-lg">Find My Path</a>
+        <a href="events.html" class="btn btn-white btn-lg">See Upcoming Events</a>
       </div>
     </div>
   </section>
 
   <!-- MISSION HIGHLIGHTS -->
-  <section id="highlights" class="highlights" style="padding: 4rem 2rem;">
-    <div class="card slide-up">
-      <h3>Academic Support</h3>
-      <p>Personalized guidance that helps students succeed in and beyond the classroom.</p>
-    </div>
+  <section class="section">
+    <div class="container">
+      <div class="highlights">
+        <div class="card">
+          <h3>Academic Support</h3>
+          <p>Personalized guidance that helps students succeed in and beyond the classroom.</p>
+          <a href="programs.html#academic" class="btn btn-secondary">Learn More</a>
+        </div>
 
-    <div class="card slide-up delay">
-      <h3>Mentorship & Growth</h3>
-      <p>Connecting students with mentors who inspire confidence, leadership, and purpose.</p>
-    </div>
+        <div class="card">
+          <h3>Mentorship & Growth</h3>
+          <p>Connecting students with mentors who inspire confidence, leadership, and purpose.</p>
+          <a href="programs.html#leadership" class="btn btn-secondary">Learn More</a>
+        </div>
 
-    <div class="card slide-up delay-2">
-      <h3>Community Focus</h3>
-      <p>Building strong partnerships with families, schools, and local organizations.</p>
+        <div class="card">
+          <h3>Community Focus</h3>
+          <p>Building strong partnerships with families, schools, and local organizations.</p>
+          <a href="community.html" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROOF STRIP -->
-  <section class="impact" style="background: rgba(253, 240, 242, 0.4); backdrop-filter: blur(10px); padding: 4rem 2rem;">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-      <h2 class="fade-in" style="margin-bottom: 2rem;">Our Impact</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-        <div>
-          <p id="impact-students" class="impact-number" data-target="100" data-suffix="+" style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">0</p>
-          <p style="color: var(--doral-black);">Students Served</p>
+  <!-- IMPACT SECTION -->
+  <section class="impact">
+    <div class="container">
+      <h2 class="text-center">Our Impact</h2>
+      <div class="impact-stats">
+        <div class="impact-stat">
+          <span class="stat-number" id="impact-students" data-target="100" data-suffix="+">0+</span>
+          <span class="stat-label">Students Served</span>
         </div>
-        <div>
-          <p id="impact-mentors" class="impact-number" data-target="50" data-suffix="+" style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">0</p>
-          <p style="color: var(--doral-black);">Mentors & Volunteers</p>
+        <div class="impact-stat">
+          <span class="stat-number" id="impact-mentors" data-target="50" data-suffix="+">0+</span>
+          <span class="stat-label">Mentors & Volunteers</span>
         </div>
-        <div>
-          <p id="impact-programs" class="impact-number" data-target="8" data-suffix="" style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">0</p>
-          <p style="color: var(--doral-black);">Program Categories</p>
+        <div class="impact-stat">
+          <span class="stat-number" id="impact-programs" data-target="8">0</span>
+          <span class="stat-label">Program Categories</span>
         </div>
-        <div>
-          <p id="impact-community" class="impact-number" data-target="1" data-suffix="" style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">0</p>
-          <p style="color: var(--doral-black);">Community United</p>
+        <div class="impact-stat">
+          <span class="stat-number" id="impact-community" data-target="1">0</span>
+          <span class="stat-label">Community United</span>
+        </div>
       </div>
-      </div>
-      <div style="margin-top: 2rem;">
+      <div class="text-center" style="margin-top: var(--space-2xl);">
         <a href="community.html" class="btn btn-primary">Read Success Stories</a>
       </div>
     </div>
   </section>
 
-  <!-- Leave Different Module -->
-  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
-    <div class="leave-different-module">
-      <h2>Leave Different</h2>
-      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; color: var(--doral-white);">
-        Doral Scholars isn't just about programs—it's about transformation. Every student, family, and community member who engages with us leaves different: with new skills, new confidence, and new opportunities.
-      </p>
-      <div class="proof-points">
-        <div class="proof-point">
-          <h3>Academic Excellence</h3>
-          <p>Raise grades with consistent support—tutoring, attendance help, and skill-building.</p>
-          <a href="programs.html#academic" style="color: var(--doral-yellow); text-decoration: underline; margin-top: 0.5rem; display: inline-block;">See programs →</a>
+  <!-- LEAVE DIFFERENT MODULE -->
+  <section class="section">
+    <div class="container">
+      <div class="leave-different-module">
+        <h2>Leave Different</h2>
+        <p>Doral Scholars isn't just about programs—it's about transformation. Every student, family, and community member who engages with us leaves different: with new skills, new confidence, and new opportunities.</p>
+        <div class="proof-points">
+          <div class="proof-point">
+            <h3>Academic Excellence</h3>
+            <p>Raise grades with consistent support—tutoring, attendance help, and skill-building.</p>
+            <a href="programs.html#academic" style="color: var(--doral-yellow);">See programs →</a>
+          </div>
+          <div class="proof-point">
+            <h3>Personal Growth</h3>
+            <p>Build confidence through mentorship, leadership, and real responsibilities.</p>
+            <a href="programs.html#leadership" style="color: var(--doral-yellow);">See programs →</a>
+          </div>
+          <div class="proof-point">
+            <h3>Community Impact</h3>
+            <p>Become part of a village that shows up—before, during, and after graduation.</p>
+            <a href="community.html" style="color: var(--doral-yellow);">Read stories →</a>
+          </div>
         </div>
-        <div class="proof-point">
-          <h3>Personal Growth</h3>
-          <p>Build confidence through mentorship, leadership, and real responsibilities.</p>
-          <a href="programs.html#leadership" style="color: var(--doral-yellow); text-decoration: underline; margin-top: 0.5rem; display: inline-block;">See programs →</a>
-        </div>
-        <div class="proof-point">
-          <h3>Community Impact</h3>
-          <p>Become part of a village that shows up—before, during, and after graduation.</p>
-          <a href="community.html" style="color: var(--doral-yellow); text-decoration: underline; margin-top: 0.5rem; display: inline-block;">Read stories →</a>
+        <div style="margin-top: var(--space-xl);">
+          <a href="get-involved.html" class="btn btn-white btn-lg">Get Matched to the Right Program</a>
         </div>
       </div>
-      <a href="get-involved.html" class="btn btn-secondary" style="margin-top: 2rem;">Get Matched to the Right Program</a>
     </div>
   </section>
 
-  <!-- Featured Programs -->
-  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
-    <h2 style="text-align: center; margin-bottom: 3rem;">Featured Programs</h2>
-    <div class="highlights">
-      <div class="card slide-up">
-        <h3>Academic Support</h3>
-        <p>Personalized guidance that helps students succeed in and beyond the classroom.</p>
-        <a href="programs.html#academic" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+  <!-- FEATURED PROGRAMS -->
+  <section class="section section--tinted">
+    <div class="container">
+      <h2 class="text-center">Featured Programs</h2>
+      <div class="grid grid--3">
+        <div class="card card--featured">
+          <h3>Academic Support</h3>
+          <p>Personalized guidance that helps students succeed in and beyond the classroom.</p>
+          <a href="programs.html#academic" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card card--featured">
+          <h3>Workforce Development</h3>
+          <p>Career readiness programs that prepare youth for professional success.</p>
+          <a href="programs.html#workforce" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card card--featured">
+          <h3>College & Career</h3>
+          <p>Supporting students through college preparation, applications, and career exploration.</p>
+          <a href="programs.html#college" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card card--featured">
+          <h3>Youth Leadership</h3>
+          <p>Empowering young leaders through peer mentoring, community service, and leadership development.</p>
+          <a href="programs.html#leadership" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card card--featured">
+          <h3>Health & Wellness</h3>
+          <p>Programs promoting physical health, mental wellness, and nutrition education.</p>
+          <a href="programs.html#wellness" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card card--featured">
+          <h3>Family Support</h3>
+          <p>Resources and support for families to help their children succeed.</p>
+          <a href="programs.html#family" class="btn btn-primary">Learn More</a>
+        </div>
       </div>
-      <div class="card slide-up delay">
-        <h3>Workforce Development</h3>
-        <p>Career readiness programs that prepare youth for professional success.</p>
-        <a href="programs.html#workforce" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
-      </div>
-      <div class="card slide-up delay-2">
-        <h3>College & Career</h3>
-        <p>Supporting students through college preparation, applications, and career exploration.</p>
-        <a href="programs.html#college" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
-      </div>
-      <div class="card slide-up">
-        <h3>Youth Leadership</h3>
-        <p>Empowering young leaders through peer mentoring, community service, and leadership development.</p>
-        <a href="programs.html#leadership" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
-      </div>
-      <div class="card slide-up delay">
-        <h3>Health & Wellness</h3>
-        <p>Programs promoting physical health, mental wellness, and nutrition education.</p>
-        <a href="programs.html#wellness" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
-      </div>
-      <div class="card slide-up delay-2">
-        <h3>Family Support</h3>
-        <p>Resources and support for families to help their children succeed.</p>
-        <a href="programs.html#family" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="programs.html" class="btn btn-secondary">View All Programs</a>
-    </div>
-  </section>
-
-  <!-- Upcoming Events Preview -->
-  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; background: rgba(255, 253, 249, 0.5); backdrop-filter: blur(10px); border-radius: 12px; border: 1px solid rgba(226, 24, 51, 0.1);">
-    <h2 style="text-align: center; margin-bottom: 3rem;">Upcoming Events</h2>
-    <div id="events-preview" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-      <!-- Events will be loaded here -->
-    </div>
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="events.html" class="btn btn-primary">View Full Calendar</a>
-    </div>
-  </section>
-
-  <!-- ROLE-BASED CONVERSION TILES -->
-  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
-    <h2 style="text-align: center; margin-bottom: 3rem;">Find Your Path</h2>
-    <div class="program-category-grid">
-      <div class="card">
-        <h3>I'm a Student</h3>
-        <p>Get matched to programs that fit your goals. Check eligibility, apply, and talk to a mentor.</p>
-        <a href="get-involved.html?role=student" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Check Eligibility</a>
-      </div>
-      <div class="card">
-        <h3>I'm a Parent/Guardian</h3>
-        <p>Enroll your child or schedule an intake call to learn how we can support your family.</p>
-        <a href="get-involved.html?role=parent" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Enroll Now</a>
-      </div>
-      <div class="card">
-        <h3>I'm an Educator</h3>
-        <p>Refer a student or partner with us to bring Doral Scholars programs to your school.</p>
-        <a href="get-involved.html?role=educator" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Partner With Us</a>
-      </div>
-      <div class="card">
-        <h3>I Want to Volunteer</h3>
-        <p>Mentor students, support events, or share your expertise. Make a difference in your community.</p>
-        <a href="get-involved.html?role=volunteer" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Volunteer</a>
-      </div>
-      <div class="card">
-        <h3>I Want to Donate</h3>
-        <p>Support our mission with a one-time gift or monthly donation. Every contribution makes an impact.</p>
-        <a href="https://paypal.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Donate Now</a>
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="programs.html" class="btn btn-secondary btn-lg">View All Programs</a>
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL FOOTER -->
-  <footer class="social-footer">
-    <a href="contact.html" class="connect-btn">Talk to Our Team</a>
-    <div class="social-icons">
-      <a href="#" aria-label="Instagram">📸</a>
-      <a href="#" aria-label="Facebook">📘</a>
-      <a href="#" aria-label="Twitter">🐦</a>
-      <a href="#" aria-label="LinkedIn">💼</a>
+  <!-- UPCOMING EVENTS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Upcoming Events</h2>
+      <div id="events-preview" class="grid grid--3">
+        <!-- Events loaded dynamically -->
+      </div>
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="events.html" class="btn btn-primary btn-lg">View Full Calendar</a>
+      </div>
     </div>
-    <div class="footer-actions">
-      <button id="login-btn-footer" class="login-btn-footer">Admin Login</button>
+  </section>
+
+  <!-- FIND YOUR PATH -->
+  <section class="section section--tinted">
+    <div class="container">
+      <h2 class="text-center">Find Your Path</h2>
+      <div class="grid grid--3" style="margin-top: var(--space-xl);">
+        <div class="card">
+          <h3>I'm a Student</h3>
+          <p>Get matched to programs that fit your goals. Check eligibility, apply, and talk to a mentor.</p>
+          <a href="get-involved.html?role=student" class="btn btn-primary">Check Eligibility</a>
+        </div>
+        <div class="card">
+          <h3>I'm a Parent/Guardian</h3>
+          <p>Enroll your child or schedule an intake call to learn how we can support your family.</p>
+          <a href="get-involved.html?role=parent" class="btn btn-primary">Enroll Now</a>
+        </div>
+        <div class="card">
+          <h3>I'm an Educator</h3>
+          <p>Refer a student or partner with us to bring Doral Scholars programs to your school.</p>
+          <a href="get-involved.html?role=educator" class="btn btn-primary">Partner With Us</a>
+        </div>
+        <div class="card">
+          <h3>I Want to Volunteer</h3>
+          <p>Mentor students, support events, or share your expertise. Make a difference in your community.</p>
+          <a href="get-involved.html?role=volunteer" class="btn btn-primary">Volunteer</a>
+        </div>
+        <div class="card">
+          <h3>I Want to Donate</h3>
+          <p>Support our mission with a one-time gift or monthly donation. Every contribution makes an impact.</p>
+          <a href="get-involved.html#donate" class="btn btn-primary">Donate Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Doral Scholars">
+        <p>Empowering youth through comprehensive education, mentorship, and community support. Every student deserves the opportunity to leave different.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/doralscholars" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://facebook.com/doralscholars" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://twitter.com/doralscholars" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/doralscholars" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Programs</h4>
+        <ul class="footer-links">
+          <li><a href="programs.html#academic">Academic Support</a></li>
+          <li><a href="programs.html#workforce">Workforce Development</a></li>
+          <li><a href="programs.html#college">College & Career</a></li>
+          <li><a href="programs.html#leadership">Youth Leadership</a></li>
+          <li><a href="programs.html#wellness">Health & Wellness</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Get Involved</h4>
+        <ul class="footer-links">
+          <li><a href="get-involved.html#student-registration">Student Registration</a></li>
+          <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+          <li><a href="get-involved.html#donate">Donate</a></li>
+          <li><a href="get-involved.html#partnerships">Partnerships</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:info@doralscholars.org">info@doralscholars.org</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <a href="tel:+13051234567">(305) 123-4567</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Miami, Florida</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Doral Scholars. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <button id="login-btn-footer" class="login-btn-footer">Admin</button>
+      </div>
     </div>
   </footer>
 
@@ -291,8 +332,5 @@
   <script src="script.js"></script>
   <script src="login.js"></script>
   <script src="home-events.js"></script>
-  <script src="hero-interactive.js"></script>
-
 </body>
 </html>
-

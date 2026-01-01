@@ -1,9 +1,34 @@
-// Ensure background video plays across all browsers
+/**
+ * Doral Scholars - Main JavaScript
+ * Handles animations, video playback, and scroll progress
+ */
+
+// ===== SCROLL PROGRESS BAR =====
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollProgress = document.getElementById('scroll-progress');
+  
+  if (scrollProgress) {
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = scrollPercent + '%';
+    }
+    
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress(); // Initial call
+  }
+});
+
+// ===== VIDEO AUTOPLAY =====
 const heroVideo = document.querySelector('.hero-background-video');
 if (heroVideo) {
+  // Ensure video is muted (required for autoplay)
+  heroVideo.muted = true;
+  heroVideo.loop = true;
+  
   // Force play for browsers that require user interaction
   heroVideo.play().catch(error => {
-    // If autoplay fails, try again after a short delay
     setTimeout(() => {
       heroVideo.play().catch(() => {
         console.log('Video autoplay prevented by browser');
@@ -11,23 +36,19 @@ if (heroVideo) {
     }, 100);
   });
   
-  // Ensure video is muted (required for autoplay in most browsers)
-  heroVideo.muted = true;
-  
-  // Ensure video loops
-  heroVideo.loop = true;
-  
   // Handle video loading
   heroVideo.addEventListener('loadeddata', () => {
-    heroVideo.play().catch(() => {
-      // Silently handle autoplay restrictions
-    });
+    heroVideo.play().catch(() => {});
   });
 }
 
-// Animated Elements
+// ===== SCROLL ANIMATIONS =====
 document.addEventListener('DOMContentLoaded', function() {
   const animatedElements = document.querySelectorAll('.slide-up, .fade-in, .zoom-in');
+  
+  if (animatedElements.length === 0) return;
+  
+  // Pause animations initially
   animatedElements.forEach(el => {
     el.style.animationPlayState = 'paused';
   });
@@ -35,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Intersection Observer for animations
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
+      if (entry.isIntersecting) {
         entry.target.style.animationPlayState = 'running';
         observer.unobserve(entry.target);
       }
@@ -45,120 +66,117 @@ document.addEventListener('DOMContentLoaded', function() {
   animatedElements.forEach(el => observer.observe(el));
 });
 
-// Impact Bubble Count Up
-const counters = document.querySelectorAll('.impact-bubble');
+// ===== IMPACT NUMBERS COUNT UP =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle both .impact-number and .stat-number elements
+  const impactNumbers = document.querySelectorAll('.impact-number, .stat-number[data-target]');
 
-if (counters.length > 0) {
+  if (impactNumbers.length === 0) return;
+
+  // Initialize all numbers to 0
+  impactNumbers.forEach(number => {
+    const suffix = number.dataset.suffix || '';
+    number.textContent = '0' + suffix;
+  });
+
+  const impactObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const numberEl = entry.target;
+        
+        if (numberEl.dataset.animated) return;
+        numberEl.dataset.animated = 'true';
+        
+        const target = parseInt(numberEl.dataset.target) || 0;
+        const suffix = numberEl.dataset.suffix || '';
+        let count = 0;
+        
+        // Animation settings
+        const duration = 1500;
+        const steps = 60;
+        const stepTime = duration / steps;
+        const increment = target / steps;
+        
+        const update = () => {
+          count += increment;
+          if (count >= target) {
+            numberEl.textContent = target + suffix;
+          } else {
+            numberEl.textContent = Math.floor(count) + suffix;
+            setTimeout(update, stepTime);
+          }
+        };
+        
+        update();
+        impactObserver.unobserve(numberEl);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  impactNumbers.forEach(number => {
+    impactObserver.observe(number);
+  });
+});
+
+// ===== IMPACT BUBBLES COUNT UP =====
+document.addEventListener('DOMContentLoaded', function() {
+  const bubbles = document.querySelectorAll('.impact-bubble');
+
+  if (bubbles.length === 0) return;
+
   const bubbleObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
+      if (entry.isIntersecting) {
         const bubble = entry.target;
         const numberEl = bubble.querySelector('.number');
-        if (numberEl && !bubble.dataset.animated) {
-          bubble.dataset.animated = 'true';
-          const target = +bubble.dataset.value;
-          let count = 0;
-          const increment = Math.max(1, Math.floor(target / 50));
-          const duration = 2000; // 2 seconds
-          const steps = 50;
-          const stepTime = duration / steps;
-          
-          const update = () => {
-            count += increment;
-            if(count >= target) {
-              numberEl.textContent = target + (target > 1 ? '+' : '');
-            } else {
-              numberEl.textContent = count;
-              setTimeout(update, stepTime);
-            }
-          };
-          update();
-        }
+        
+        if (!numberEl || bubble.dataset.animated) return;
+        bubble.dataset.animated = 'true';
+        
+        const target = parseInt(bubble.dataset.value) || 0;
+        let count = 0;
+        
+        const duration = 2000;
+        const steps = 50;
+        const stepTime = duration / steps;
+        const increment = Math.max(1, Math.floor(target / steps));
+        
+        const update = () => {
+          count += increment;
+          if (count >= target) {
+            numberEl.textContent = target + (target > 1 ? '+' : '');
+          } else {
+            numberEl.textContent = count;
+            setTimeout(update, stepTime);
+          }
+        };
+        
+        update();
         bubbleObserver.unobserve(bubble);
       }
     });
   }, { threshold: 0.5 });
 
-  counters.forEach(bubble => {
+  bubbles.forEach(bubble => {
     bubbleObserver.observe(bubble);
   });
-}
+});
 
-// Impact Numbers Count Up Animation
+// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
 document.addEventListener('DOMContentLoaded', function() {
-  const impactNumbers = document.querySelectorAll('.impact-number');
-
-  if (impactNumbers.length > 0) {
-    // Initialize all numbers to 0 immediately on page load
-    impactNumbers.forEach(number => {
-      number.textContent = '0';
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
-
-    const impactObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          const numberEl = entry.target;
-          if (!numberEl.dataset.animated) {
-            numberEl.dataset.animated = 'true';
-            const target = parseInt(numberEl.dataset.target);
-            const suffix = numberEl.dataset.suffix || '';
-            let count = 0;
-            
-            // Fast animation - 1.5 seconds
-            const duration = 1500;
-            const steps = 60;
-            const stepTime = duration / steps;
-            const increment = target / steps;
-            
-            const update = () => {
-              count += increment;
-              if(count >= target) {
-                numberEl.textContent = target + suffix;
-              } else {
-                numberEl.textContent = Math.floor(count) + suffix;
-                setTimeout(update, stepTime);
-              }
-            };
-            update();
-          }
-          impactObserver.unobserve(numberEl);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-
-    impactNumbers.forEach(number => {
-      impactObserver.observe(number);
-    });
-  }
+  });
 });
-
-const stylus = document.getElementById('stylus-pointer');
-
-// Function to check hover over interactive elements
-function checkHover(e) {
-  const hovered = document.elementFromPoint(e.clientX, e.clientY);
-  if (hovered && (hovered.tagName === 'BUTTON' || hovered.tagName === 'A' || hovered.classList.contains('card'))) {
-    stylus.classList.add('hovering');
-  } else {
-    stylus.classList.remove('hovering');
-  }
-}
-
-document.addEventListener('mousemove', e => {
-  // Move the stylus
-  stylus.style.top = e.clientY + 'px';
-  stylus.style.left = e.clientX + 'px';
-
-  // Add glow animation
-  stylus.classList.add('moving');
-  clearTimeout(stylus._timeout);
-  stylus._timeout = setTimeout(() => stylus.classList.remove('moving'), 100);
-
-  // Check hover effects
-  checkHover(e);
-});
-
-
-
-
-
