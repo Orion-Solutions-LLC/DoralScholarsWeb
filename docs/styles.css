@@ -103,15 +103,16 @@ a:hover {
 
 /* Navigation Bar */
 nav {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.85);
+  backdrop-filter: blur(15px);
   padding: 1rem 2rem;
   position: sticky;
   top: 4px; /* Below scroll progress bar */
   z-index: 100;
   box-shadow: 0 2px 4px rgba(226, 24, 51, 0.1);
+  border-bottom: 1px solid rgba(226, 24, 51, 0.1);
   box-sizing: border-box;
   transition: background-color 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
 nav ul {
@@ -122,9 +123,21 @@ nav ul {
 }
 
 nav .logo {
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav .home-link {
   margin-right: auto;
   display: flex;
   align-items: center;
+  margin-left: 1rem;
+}
+
+nav .home-link a {
+  font-weight: 600;
+  padding: 0.5rem 1rem;
 }
 
 nav .logo img {
@@ -184,8 +197,10 @@ nav a.active {
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--doral-bg-warm);
-  box-shadow: 0 4px 12px rgba(226, 24, 51, 0.15);
+  background: rgba(255, 253, 249, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 12px rgba(226, 24, 51, 0.2);
+  border: 1px solid rgba(226, 24, 51, 0.15);
   border-radius: 8px;
   min-width: 220px;
   max-width: 280px;
@@ -365,6 +380,9 @@ nav .donate-btn:hover {
   padding: 2rem;
   overflow: hidden;
   position: relative;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Page Header - Simple header for non-home pages */
@@ -373,7 +391,9 @@ nav .donate-btn:hover {
   color: var(--doral-white);
   padding: 3rem 2rem 2rem;
   text-align: center;
-  margin-top: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .page-header h1 {
@@ -530,15 +550,29 @@ section {
   padding: 4rem 2rem;
   position: relative;
   transition: background-color 0.5s ease;
+  background: transparent;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-/* Smooth section transitions */
+/* Sections with max-width containers - handled by inline styles */
+
+/* Smooth section transitions - subtle overlay instead of solid backgrounds */
 section:nth-child(even) {
-  background: var(--doral-bg-light-red);
+  background: rgba(253, 240, 242, 0.2);
+  backdrop-filter: blur(8px);
 }
 
 section:nth-child(odd) {
-  background: var(--doral-bg-off-red);
+  background: rgba(255, 244, 230, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Ensure sections don't overlap */
+section + section {
+  margin-top: 0;
 }
 
 /* Parallax effect on scroll */
@@ -554,16 +588,18 @@ section:nth-child(odd) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   padding: 0;
 }
 
 .card {
-  background: linear-gradient(135deg, var(--doral-bg-warm), #ffe6e6);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 10px 25px rgba(226, 24, 51, 0.1);
+  box-shadow: 0 10px 25px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -613,9 +649,12 @@ section:nth-child(odd) {
 
 /* Impact Section */
 .impact {
-  background: var(--doral-bg-light-red);
+  background: rgba(253, 240, 242, 0.4);
+  backdrop-filter: blur(10px);
   text-align: center;
   padding: 4rem 2rem;
+  border-top: 1px solid rgba(226, 24, 51, 0.1);
+  border-bottom: 1px solid rgba(226, 24, 51, 0.1);
 }
 
 .impact h2,
@@ -646,12 +685,15 @@ section:nth-child(odd) {
 .slide {
   display: none;
   padding: 2rem;
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 0;
   transform: translateX(20px);
+  text-align: center;
 }
 
 .slide.active {
@@ -717,10 +759,8 @@ section:nth-child(odd) {
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
-  margin-top: 3rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 3rem 0 0 0;
+  max-width: 100%;
 }
 
 .impact-bubble {
@@ -780,7 +820,7 @@ section:nth-child(odd) {
 .cta h2 {
   font-family: 'Dela Gothic One', cursive;
   font-size: 24px;
-  color: var(--doral-white);
+  color: var(--doral-white) !important;
   margin-bottom: 1rem;
   text-align: center;
   width: 100%;
@@ -789,7 +829,7 @@ section:nth-child(odd) {
 .cta p {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  color: var(--doral-white);
+  color: var(--doral-white) !important;
   max-width: 600px;
   margin: 1rem auto 2rem;
   text-align: center;
@@ -836,18 +876,19 @@ button,
 /* Main Content Container */
 main {
   flex: 1;
-  padding: 2rem;
-  max-width: 1200px;
+  padding: 0;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   background: transparent;
 }
 
 .page-content {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.6);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(226, 24, 51, 0.1);
+  border: 1px solid rgba(226, 24, 51, 0.08);
 }
 
 /* Animations */
@@ -901,12 +942,14 @@ main {
   background: var(--doral-black);
   color: var(--doral-white);
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
   margin-top: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .social-footer .connect-btn {
@@ -1124,13 +1167,15 @@ main {
 }
 
 .event-item {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(226, 24, 51, 0.1);
+  box-shadow: 0 2px 4px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
+  border-left: 4px solid var(--doral-red);
   cursor: pointer;
   transition: all 0.3s ease;
-  border-left: 4px solid var(--doral-red);
 }
 
 .event-item:hover {
@@ -1173,10 +1218,12 @@ main {
 }
 
 .event-form {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
   margin-bottom: 2rem;
 }
 
@@ -1233,10 +1280,12 @@ main {
 
 /* Contact Form Styles */
 .contact-form {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(226, 24, 51, 0.1);
+  box-shadow: 0 2px 4px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
 }
 
 .contact-form .form-group {
@@ -1465,7 +1514,7 @@ main {
   color: var(--doral-white);
   padding: 4rem 2rem;
   border-radius: 12px;
-  margin: 4rem 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -1482,7 +1531,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
 }
 
 .leave-different-module .proof-point {
@@ -1507,16 +1556,18 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 0;
 }
 
 .program-category-card {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(226, 24, 51, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
   border-top: 4px solid var(--doral-red);
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
@@ -1543,12 +1594,14 @@ main {
 
 /* Event Cards */
 .event-card {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(226, 24, 51, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
   border-left: 4px solid var(--doral-yellow);
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
@@ -1576,12 +1629,14 @@ main {
 }
 
 .event-card .event-tag {
-  background: var(--doral-light-gray);
+  background: rgba(255, 253, 249, 0.8);
+  backdrop-filter: blur(5px);
   color: var(--doral-black);
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
+  border: 1px solid rgba(226, 24, 51, 0.1);
 }
 
 .event-card .event-metrics {
@@ -1594,10 +1649,12 @@ main {
 
 /* Calendar Component */
 .calendar-container {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.7);
+  backdrop-filter: blur(15px);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(226, 24, 51, 0.1);
+  box-shadow: 0 2px 8px rgba(226, 24, 51, 0.15);
+  border: 1px solid rgba(226, 24, 51, 0.1);
 }
 
 .calendar-header {
@@ -1631,7 +1688,8 @@ main {
 }
 
 .calendar-day:hover {
-  background: var(--doral-light-gray);
+  background: rgba(255, 253, 249, 0.8);
+  backdrop-filter: blur(5px);
 }
 
 .calendar-day.has-events {
@@ -1654,7 +1712,8 @@ main {
 }
 
 .filter-chip {
-  background: var(--doral-bg-warm);
+  background: rgba(255, 253, 249, 0.8);
+  backdrop-filter: blur(10px);
   border: 2px solid var(--doral-red);
   color: var(--doral-red);
   padding: 0.5rem 1rem;

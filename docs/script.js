@@ -26,22 +26,24 @@ if (heroVideo) {
 }
 
 // Animated Elements
-const animatedElements = document.querySelectorAll('.slide-up, .fade-in, .zoom-in');
-animatedElements.forEach(el => {
-  el.style.animationPlayState = 'paused';
-});
-
-// Intersection Observer for animations
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.style.animationPlayState = 'running';
-      observer.unobserve(entry.target);
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  const animatedElements = document.querySelectorAll('.slide-up, .fade-in, .zoom-in');
+  animatedElements.forEach(el => {
+    el.style.animationPlayState = 'paused';
   });
-}, { threshold: 0.1 });
 
-animatedElements.forEach(el => observer.observe(el));
+  // Intersection Observer for animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  animatedElements.forEach(el => observer.observe(el));
+});
 
 // Impact Bubble Count Up
 const counters = document.querySelectorAll('.impact-bubble');
@@ -83,47 +85,52 @@ if (counters.length > 0) {
 }
 
 // Impact Numbers Count Up Animation
-const impactNumbers = document.querySelectorAll('.impact-number');
+document.addEventListener('DOMContentLoaded', function() {
+  const impactNumbers = document.querySelectorAll('.impact-number');
 
-if (impactNumbers.length > 0) {
-  const impactObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        const numberEl = entry.target;
-        if (!numberEl.dataset.animated) {
-          numberEl.dataset.animated = 'true';
-          const target = parseInt(numberEl.dataset.target);
-          const suffix = numberEl.dataset.suffix || '';
-          let count = 0;
-          
-          // Fast animation - 1.5 seconds
-          const duration = 1500;
-          const steps = 60;
-          const stepTime = duration / steps;
-          const increment = target / steps;
-          
-          const update = () => {
-            count += increment;
-            if(count >= target) {
-              numberEl.textContent = target + suffix;
-            } else {
-              numberEl.textContent = Math.floor(count) + suffix;
-              setTimeout(update, stepTime);
-            }
-          };
-          update();
-        }
-        impactObserver.unobserve(numberEl);
-      }
+  if (impactNumbers.length > 0) {
+    // Initialize all numbers to 0 immediately on page load
+    impactNumbers.forEach(number => {
+      number.textContent = '0';
     });
-  }, { threshold: 0.3 });
 
-  impactNumbers.forEach(number => {
-    // Initialize to 0
-    number.textContent = '0';
-    impactObserver.observe(number);
-  });
-}
+    const impactObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          const numberEl = entry.target;
+          if (!numberEl.dataset.animated) {
+            numberEl.dataset.animated = 'true';
+            const target = parseInt(numberEl.dataset.target);
+            const suffix = numberEl.dataset.suffix || '';
+            let count = 0;
+            
+            // Fast animation - 1.5 seconds
+            const duration = 1500;
+            const steps = 60;
+            const stepTime = duration / steps;
+            const increment = target / steps;
+            
+            const update = () => {
+              count += increment;
+              if(count >= target) {
+                numberEl.textContent = target + suffix;
+              } else {
+                numberEl.textContent = Math.floor(count) + suffix;
+                setTimeout(update, stepTime);
+              }
+            };
+            update();
+          }
+          impactObserver.unobserve(numberEl);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+    impactNumbers.forEach(number => {
+      impactObserver.observe(number);
+    });
+  }
+});
 
 const stylus = document.getElementById('stylus-pointer');
 
