@@ -58,6 +58,11 @@
         <button class="path-selector-btn" data-path="school">School/Educator</button>
         <button class="path-selector-btn" data-path="community">Community Member</button>
       </div>
+      
+      <!-- Role-Specific CTA Band -->
+      <div id="role-cta-band" style="margin-top: 2rem; padding: 2rem; background: var(--doral-light-gray); border-radius: 12px; display: none;">
+        <div id="role-cta-content"></div>
+      </div>
     </section>
 
     <!-- Program Categories -->
@@ -76,7 +81,7 @@
             <li>STEAM Projects</li>
             <li>Attendance Support</li>
           </ul>
-          <a href="program-detail.html?category=academic" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+          <a href="programs/youth-development.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">View Program Details</a>
         </div>
 
         <!-- Workforce Development -->
@@ -208,23 +213,22 @@
             <p>Join a network of support that extends beyond graduation.</p>
           </div>
         </div>
-        <a href="get-involved.html" class="btn btn-secondary" style="margin-top: 2rem;">Get Started</a>
+        <a href="get-involved.html" class="btn btn-secondary" style="margin-top: 2rem;">Get Matched to the Right Program</a>
       </div>
     </section>
   </main>
 
   <!-- SOCIAL FOOTER -->
   <footer class="social-footer">
-    <a href="contact.html" class="connect-btn">Connect With Us</a>
+    <a href="contact.html" class="connect-btn">Talk to Our Team</a>
     <div class="social-icons">
       <a href="#" aria-label="Instagram">📸</a>
       <a href="#" aria-label="Facebook">📘</a>
       <a href="#" aria-label="Twitter">🐦</a>
       <a href="#" aria-label="LinkedIn">💼</a>
     </div>
-    <div class="footer-actions">
-      <a href="admin.html" class="login-btn-footer">Admin</a>
-      <button id="login-btn-footer" class="login-btn-footer">Admin Login</button>
+    <div class="footer-actions" style="display: none;">
+      <!-- Admin access removed from public UI for security -->
     </div>
   </footer>
 

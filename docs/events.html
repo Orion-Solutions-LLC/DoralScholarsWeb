@@ -42,35 +42,63 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <h1 class="fade-in">Youth Development Program</h1>
+      <h1 class="fade-in">Events & Programs</h1>
       <p class="fade-in delay">
-        A safe, supportive, and enriching environment fostering positive development, conflict resolution skills, and community engagement.
+        Join us for workshops, community events, and programs designed to support your growth and success.
       </p>
     </section>
 
-    <!-- Program Goal & Structure -->
-    <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
-      <div class="page-content">
-        <h2>Program Goal</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-          To provide a safe, supportive, and enriching environment for youth, fostering positive development, conflict resolution skills, and community engagement to prevent violence and crime.
-        </p>
+    <!-- View Toggle -->
+    <section style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; gap: 1rem;">
+          <button id="view-list-btn" class="filter-chip active">List View</button>
+          <button id="view-calendar-btn" class="filter-chip">Calendar View</button>
+        </div>
+        <div class="filter-container">
+          <select id="filter-audience" class="filter-chip" style="border: 2px solid var(--doral-red); padding: 0.5rem 1rem;">
+            <option value="">All Audiences</option>
+            <option value="student">Students</option>
+            <option value="parent">Parents</option>
+            <option value="educator">Educators</option>
+            <option value="community">Community</option>
+          </select>
+          <select id="filter-type" class="filter-chip" style="border: 2px solid var(--doral-red); padding: 0.5rem 1rem;">
+            <option value="">All Types</option>
+            <option value="workshop">Workshop</option>
+            <option value="event">Event</option>
+            <option value="program">Program</option>
+            <option value="meeting">Meeting</option>
+          </select>
+          <button id="filter-past" class="filter-chip">Show Past Events</button>
+        </div>
+      </div>
 
-        <h2>Program Structure</h2>
-        <p>
-          Each month focuses on a specific theme, with weekly activities building upon that theme. Activities include workshops, discussions, creative projects, physical activities, and community service opportunities.
-        </p>
+      <!-- List View -->
+      <div id="list-view" class="events-list-view">
+        <div id="events-list-container"></div>
+      </div>
+
+      <!-- Calendar View -->
+      <div id="calendar-view" class="calendar-container" style="display: none;">
+        <div class="calendar-header">
+          <button id="prev-month" class="btn btn-secondary">‹ Previous</button>
+          <h2 id="calendar-month-year"></h2>
+          <button id="next-month" class="btn btn-secondary">Next ›</button>
+        </div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+        <div id="calendar-events-list" style="margin-top: 2rem;"></div>
       </div>
     </section>
 
-    <!-- Dynamic Events (Admin-managed) -->
-    <section id="dynamic-events-section" style="padding: 2rem; max-width: 1200px; margin: 0 auto; display: none;">
-      <h2 style="text-align: center; margin-bottom: 3rem;">Upcoming Events</h2>
-      <div id="dynamic-events"></div>
+    <!-- Program Link -->
+    <section style="padding: 2rem; max-width: 1200px; margin: 0 auto; background: var(--doral-light-gray); border-radius: 12px; text-align: center;">
+      <h2>Looking for Monthly Program Themes?</h2>
+      <p>Our Youth Development Program runs year-round with monthly themes. <a href="programs/youth-development.html">View the complete monthly program calendar →</a></p>
     </section>
 
-    <!-- Monthly Programs (Default Content) -->
-    <section id="monthly-programs" style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+    <!-- Old Monthly Programs Section - Hidden/Removed -->
+    <section id="monthly-programs" style="display: none;">
       <h2 style="text-align: center; margin-bottom: 3rem;">Monthly Program Calendar</h2>
 
       <!-- January -->
@@ -270,16 +298,15 @@
 
   <!-- SOCIAL FOOTER -->
   <footer class="social-footer">
-    <a href="contact.html" class="connect-btn">Connect With Us</a>
+    <a href="contact.html" class="connect-btn">Talk to Our Team</a>
     <div class="social-icons">
       <a href="#" aria-label="Instagram">📸</a>
       <a href="#" aria-label="Facebook">📘</a>
       <a href="#" aria-label="Twitter">🐦</a>
       <a href="#" aria-label="LinkedIn">💼</a>
     </div>
-    <div class="footer-actions">
-      <a href="admin.html" class="login-btn-footer">Admin</a>
-      <button id="login-btn-footer" class="login-btn-footer">Admin Login</button>
+    <div class="footer-actions" style="display: none;">
+      <!-- Admin access removed from public UI for security -->
     </div>
   </footer>
 
@@ -297,13 +324,7 @@
     </div>
   </div>
 
-  <script src="events-data.js"></script>
+  <script src="events-enhanced.js"></script>
   <script src="login.js"></script>
-  <script>
-    // Redirect to enhanced events page if available
-    if (window.location.pathname.includes('events.html') && !window.location.search.includes('legacy')) {
-      // Optionally redirect: window.location.href = 'events-enhanced.html';
-    }
-  </script>
 </body>
 </html>

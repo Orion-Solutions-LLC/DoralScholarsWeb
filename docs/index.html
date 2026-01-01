@@ -52,14 +52,13 @@
       Your browser does not support the video tag.
     </video>
     <div class="hero-content">
-      <h1 class="fade-in">Empowering Students. Strengthening Community.</h1>
-      <p class="fade-in delay">
-        Doral Scholars supports students and families through education,
-        mentorship, and opportunity.
+      <h1 class="fade-in">Leave Different—stronger in school, steadier in life, surrounded by support.</h1>
+      <p class="fade-in delay" style="font-size: 1.5rem; max-width: 800px;">
+        Programs, mentors, and resources that turn pressure into progress for students and families.
       </p>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-        <a href="programs.html" class="btn btn-primary fade-in delay-2">Explore Programs</a>
-        <a href="events.html" class="btn btn-secondary fade-in delay-2">View Events</a>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
+        <a href="programs.html" class="btn btn-primary fade-in delay-2">Find My Path</a>
+        <a href="events.html" class="btn btn-secondary fade-in delay-2">See Upcoming Events</a>
       </div>
     </div>
   </section>
@@ -82,23 +81,30 @@
     </div>
   </section>
 
-  <!-- IMPACT SECTION -->
-  <section class="impact">
-    <h2 class="fade-in">Our Impact</h2>
-    <div class="impact-bubbles">
-      <div class="impact-bubble" data-value="100">
-        <span class="number">0</span>
-        <p>Students Supported</p>
+  <!-- PROOF STRIP -->
+  <section class="impact" style="background: var(--doral-white); padding: 3rem 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h2 class="fade-in" style="margin-bottom: 2rem;">Our Impact</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <div>
+          <p style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">100+</p>
+          <p style="color: var(--doral-black);">Students Served</p>
+        </div>
+        <div>
+          <p style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">50+</p>
+          <p style="color: var(--doral-black);">Mentors & Volunteers</p>
+        </div>
+        <div>
+          <p style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">8</p>
+          <p style="color: var(--doral-black);">Program Categories</p>
+        </div>
+        <div>
+          <p style="font-size: 2rem; font-weight: 700; color: var(--doral-red); margin-bottom: 0.5rem;">1</p>
+          <p style="color: var(--doral-black);">Community United</p>
+        </div>
       </div>
-
-      <div class="impact-bubble" data-value="50">
-        <span class="number">0</span>
-        <p>Mentors & Volunteers</p>
-      </div>
-
-      <div class="impact-bubble" data-value="1">
-        <span class="number">1</span>
-        <p>Community United</p>
+      <div style="margin-top: 2rem;">
+        <a href="community.html" class="btn btn-primary">Read Success Stories</a>
       </div>
     </div>
   </section>
@@ -113,18 +119,21 @@
       <div class="proof-points">
         <div class="proof-point">
           <h3>Academic Excellence</h3>
-          <p>Build the skills and confidence to excel in school and beyond.</p>
+          <p>Raise grades with consistent support—tutoring, attendance help, and skill-building.</p>
+          <a href="programs.html#academic" style="color: var(--doral-yellow); text-decoration: underline; margin-top: 0.5rem; display: inline-block;">See programs →</a>
         </div>
         <div class="proof-point">
           <h3>Personal Growth</h3>
-          <p>Discover your strengths and develop leadership skills that last a lifetime.</p>
+          <p>Build confidence through mentorship, leadership, and real responsibilities.</p>
+          <a href="programs.html#leadership" style="color: var(--doral-yellow); text-decoration: underline; margin-top: 0.5rem; display: inline-block;">See programs →</a>
         </div>
         <div class="proof-point">
           <h3>Community Impact</h3>
-          <p>Join a network of support that extends far beyond graduation.</p>
+          <p>Become part of a village that shows up—before, during, and after graduation.</p>
+          <a href="community.html" style="color: var(--doral-yellow); text-decoration: underline; margin-top: 0.5rem; display: inline-block;">Read stories →</a>
         </div>
       </div>
-      <a href="get-involved.html" class="btn btn-secondary" style="margin-top: 2rem;">Start Your Journey</a>
+      <a href="get-involved.html" class="btn btn-secondary" style="margin-top: 2rem;">Get Matched to the Right Program</a>
     </div>
   </section>
 
@@ -179,25 +188,49 @@
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
-  <section class="cta fade-in">
-    <h2>Join the Village</h2>
-    <p>When students are supported, entire communities thrive.</p>
-    <a href="get-involved.html" class="btn btn-secondary">Get Involved</a>
+  <!-- ROLE-BASED CONVERSION TILES -->
+  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; margin-bottom: 3rem;">Find Your Path</h2>
+    <div class="program-category-grid">
+      <div class="card">
+        <h3>I'm a Student</h3>
+        <p>Get matched to programs that fit your goals. Check eligibility, apply, and talk to a mentor.</p>
+        <a href="get-involved.html?role=student" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Check Eligibility</a>
+      </div>
+      <div class="card">
+        <h3>I'm a Parent/Guardian</h3>
+        <p>Enroll your child or schedule an intake call to learn how we can support your family.</p>
+        <a href="get-involved.html?role=parent" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Enroll Now</a>
+      </div>
+      <div class="card">
+        <h3>I'm an Educator</h3>
+        <p>Refer a student or partner with us to bring Doral Scholars programs to your school.</p>
+        <a href="get-involved.html?role=educator" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Partner With Us</a>
+      </div>
+      <div class="card">
+        <h3>I Want to Volunteer</h3>
+        <p>Mentor students, support events, or share your expertise. Make a difference in your community.</p>
+        <a href="get-involved.html?role=volunteer" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Volunteer</a>
+      </div>
+      <div class="card">
+        <h3>I Want to Donate</h3>
+        <p>Support our mission with a one-time gift or monthly donation. Every contribution makes an impact.</p>
+        <a href="https://paypal.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Donate Now</a>
+      </div>
+    </div>
   </section>
 
   <!-- SOCIAL FOOTER -->
   <footer class="social-footer">
-    <a href="contact.html" class="connect-btn">Connect With Us</a>
+    <a href="contact.html" class="connect-btn">Talk to Our Team</a>
     <div class="social-icons">
       <a href="#" aria-label="Instagram">📸</a>
       <a href="#" aria-label="Facebook">📘</a>
       <a href="#" aria-label="Twitter">🐦</a>
       <a href="#" aria-label="LinkedIn">💼</a>
     </div>
-    <div class="footer-actions">
-      <a href="admin.html" class="login-btn-footer">Admin</a>
-      <button id="login-btn-footer" class="login-btn-footer">Admin Login</button>
+    <div class="footer-actions" style="display: none;">
+      <!-- Admin access removed from public UI for security -->
     </div>
   </footer>
 
