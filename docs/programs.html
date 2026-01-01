@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs - Doral Scholars</title>
+  <meta name="description" content="Explore Doral Scholars programs: Academic Support, Workforce Development, College & Career, Youth Support, Enrichment, Health & Wellness, Leadership, and Family Support.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Doral Scholars Program Logo">
+        </a>
+      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-item-dropdown">
+        <a href="programs.html" class="active">Programs</a>
+        <ul class="dropdown-menu">
+          <li><a href="programs.html#academic">Academic Programs</a></li>
+          <li><a href="programs.html#workforce">Workforce Development</a></li>
+          <li><a href="programs.html#college">College & Career</a></li>
+          <li><a href="programs.html#support">Youth Support Services</a></li>
+          <li><a href="programs.html#enrichment">Enrichment Programs</a></li>
+          <li><a href="programs.html#wellness">Health & Wellness</a></li>
+          <li><a href="programs.html#leadership">Youth Leadership</a></li>
+          <li><a href="programs.html#family">Family Support</a></li>
+        </ul>
+      </li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="get-involved.html">Get Involved</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="https://paypal.com" target="_blank" rel="noopener noreferrer" class="donate-btn">Donate</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 class="fade-in">Find Your Path</h1>
+      <p class="fade-in delay">
+        Doral Scholars offers comprehensive programs designed to support students academically, professionally, and personally. Discover the programs that fit your needs.
+      </p>
+    </section>
+
+    <!-- Path Selector -->
+    <section style="padding: 3rem 2rem; max-width: 1200px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">I am a...</h2>
+      <div class="path-selector">
+        <button class="path-selector-btn active" data-path="all">All Programs</button>
+        <button class="path-selector-btn" data-path="student">Student</button>
+        <button class="path-selector-btn" data-path="parent">Parent/Guardian</button>
+        <button class="path-selector-btn" data-path="school">School/Educator</button>
+        <button class="path-selector-btn" data-path="community">Community Member</button>
+      </div>
+    </section>
+
+    <!-- Program Categories -->
+    <section style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+      <div class="program-category-grid" id="program-categories">
+        
+        <!-- Academic Programs -->
+        <div class="program-category-card" id="academic" data-categories="student,parent,school">
+          <h3>Academic Programs</h3>
+          <p>Comprehensive academic support from in-school assistance to summer enrichment programs.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>In-School Support</li>
+            <li>After-School Programs</li>
+            <li>Summer School</li>
+            <li>STEAM Projects</li>
+            <li>Attendance Support</li>
+          </ul>
+          <a href="program-detail.html?category=academic" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+        <!-- Workforce Development -->
+        <div class="program-category-card" id="workforce" data-categories="student,parent">
+          <h3>Workforce Development</h3>
+          <p>Career readiness programs that prepare youth for professional success.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>YouthWorks</li>
+            <li>Career Training</li>
+            <li>Internships</li>
+            <li>Job Readiness</li>
+            <li>Professional Skills</li>
+          </ul>
+          <a href="program-detail.html?category=workforce" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+        <!-- College & Career -->
+        <div class="program-category-card" id="college" data-categories="student,parent">
+          <h3>College & Career</h3>
+          <p>Supporting students through college preparation, applications, and career exploration.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>College Preparation</li>
+            <li>Application Support</li>
+            <li>Career Exploration</li>
+            <li>Scholarship Resources</li>
+            <li>College Tours</li>
+          </ul>
+          <a href="program-detail.html?category=college" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+        <!-- Youth Support Services -->
+        <div class="program-category-card" id="support" data-categories="student,parent,school">
+          <h3>Youth Support Services</h3>
+          <p>Holistic support services addressing barriers and promoting mental health and well-being.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>Barrier Removal</li>
+            <li>Mental Health Support</li>
+            <li>Social-Emotional Learning</li>
+            <li>Conflict Resolution</li>
+            <li>Mentorship Programs</li>
+          </ul>
+          <a href="program-detail.html?category=support" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+        <!-- Enrichment Programs -->
+        <div class="program-category-card" id="enrichment" data-categories="student,parent">
+          <h3>Enrichment Programs</h3>
+          <p>Creative and therapeutic programs that inspire growth and self-expression.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>Culinary Arts</li>
+            <li>Music Therapy</li>
+            <li>Photo Therapy</li>
+            <li>Horticulture</li>
+            <li>Arts & Culture</li>
+          </ul>
+          <a href="program-detail.html?category=enrichment" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+        <!-- Health & Wellness -->
+        <div class="program-category-card" id="wellness" data-categories="student,parent">
+          <h3>Health & Wellness</h3>
+          <p>Programs promoting physical health, mental wellness, and nutrition education.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>Healthy Meals</li>
+            <li>Physical Activities</li>
+            <li>Mental Health Resources</li>
+            <li>Nutrition Education</li>
+            <li>Wellness Workshops</li>
+          </ul>
+          <a href="program-detail.html?category=wellness" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+        <!-- Youth Leadership -->
+        <div class="program-category-card" id="leadership" data-categories="student,parent">
+          <h3>Youth Leadership</h3>
+          <p>Empowering young leaders through peer mentoring, community service, and leadership development.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>Peer Mentoring</li>
+            <li>Student Ambassador</li>
+            <li>Leadership Development</li>
+            <li>Community Service</li>
+            <li>Youth Advisory Board</li>
+          </ul>
+          <a href="program-detail.html?category=leadership" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+        <!-- Family Support -->
+        <div class="program-category-card" id="family" data-categories="parent,school,community">
+          <h3>Family Support</h3>
+          <p>Resources and support for families to help their children succeed.</p>
+          <div class="program-count">5 programs</div>
+          <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+            <li>Parent Resources</li>
+            <li>Family Engagement</li>
+            <li>Educational Support</li>
+            <li>Resource Connection</li>
+            <li>Emergency Assistance</li>
+          </ul>
+          <a href="program-detail.html?category=family" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Leave Different Module -->
+    <section style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+      <div class="leave-different-module">
+        <h2>Leave Different</h2>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem;">
+          Every program at Doral Scholars is designed with one goal: to help you leave different—with new skills, new confidence, and new opportunities.
+        </p>
+        <div class="proof-points">
+          <div class="proof-point">
+            <h3>Academic Growth</h3>
+            <p>Build skills and confidence that transform your academic journey.</p>
+          </div>
+          <div class="proof-point">
+            <h3>Personal Development</h3>
+            <p>Discover your strengths and develop leadership skills.</p>
+          </div>
+          <div class="proof-point">
+            <h3>Community Impact</h3>
+            <p>Join a network of support that extends beyond graduation.</p>
+          </div>
+        </div>
+        <a href="get-involved.html" class="btn btn-secondary" style="margin-top: 2rem;">Get Started</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- SOCIAL FOOTER -->
+  <footer class="social-footer">
+    <a href="contact.html" class="connect-btn">Connect With Us</a>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram">📸</a>
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="LinkedIn">💼</a>
+    </div>
+    <div class="footer-actions">
+      <a href="admin.html" class="login-btn-footer">Admin</a>
+      <button id="login-btn-footer" class="login-btn-footer">Admin Login</button>
+    </div>
+  </footer>
+
+  <!-- LOGIN MODAL -->
+  <div id="login-modal" class="login-modal">
+    <div class="login-container">
+      <button id="login-close" class="login-close" aria-label="Close">×</button>
+      <h3>Admin Login</h3>
+      <form id="login-form" class="login-form">
+        <input type="text" id="login-username" placeholder="Username" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <div id="login-error" class="login-error" style="display: none;"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+  <script src="programs.js"></script>
+</body>
+</html>
+

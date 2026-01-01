@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow admin page from search engines
+Disallow: /admin.html
+
+# Sitemap location
+Sitemap: https://yourusername.github.io/DoralScholarsWeb/sitemap.xml
+

@@ -18,7 +18,23 @@
         </a>
       </li>
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">Learn about us</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-item-dropdown">
+        <a href="programs.html">Programs</a>
+        <ul class="dropdown-menu">
+          <li><a href="programs.html#academic">Academic Programs</a></li>
+          <li><a href="programs.html#workforce">Workforce Development</a></li>
+          <li><a href="programs.html#college">College & Career</a></li>
+          <li><a href="programs.html#support">Youth Support Services</a></li>
+          <li><a href="programs.html#enrichment">Enrichment Programs</a></li>
+          <li><a href="programs.html#wellness">Health & Wellness</a></li>
+          <li><a href="programs.html#leadership">Youth Leadership</a></li>
+          <li><a href="programs.html#family">Family Support</a></li>
+        </ul>
+      </li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="get-involved.html">Get Involved</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="https://paypal.com" target="_blank" rel="noopener noreferrer" class="donate-btn">Donate</a></li>
@@ -41,7 +57,10 @@
         Doral Scholars supports students and families through education,
         mentorship, and opportunity.
       </p>
-      <a href="#highlights" class="btn btn-primary fade-in delay-2">Learn More</a>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <a href="programs.html" class="btn btn-primary fade-in delay-2">Explore Programs</a>
+        <a href="events.html" class="btn btn-secondary fade-in delay-2">View Events</a>
+      </div>
     </div>
   </section>
 
@@ -84,11 +103,87 @@
     </div>
   </section>
 
+  <!-- Leave Different Module -->
+  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+    <div class="leave-different-module">
+      <h2>Leave Different</h2>
+      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem;">
+        Doral Scholars isn't just about programs—it's about transformation. Every student, family, and community member who engages with us leaves different: with new skills, new confidence, and new opportunities.
+      </p>
+      <div class="proof-points">
+        <div class="proof-point">
+          <h3>Academic Excellence</h3>
+          <p>Build the skills and confidence to excel in school and beyond.</p>
+        </div>
+        <div class="proof-point">
+          <h3>Personal Growth</h3>
+          <p>Discover your strengths and develop leadership skills that last a lifetime.</p>
+        </div>
+        <div class="proof-point">
+          <h3>Community Impact</h3>
+          <p>Join a network of support that extends far beyond graduation.</p>
+        </div>
+      </div>
+      <a href="get-involved.html" class="btn btn-secondary" style="margin-top: 2rem;">Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- Featured Programs -->
+  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; margin-bottom: 3rem;">Featured Programs</h2>
+    <div class="highlights">
+      <div class="card slide-up">
+        <h3>Academic Support</h3>
+        <p>Personalized guidance that helps students succeed in and beyond the classroom.</p>
+        <a href="programs.html#academic" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+      </div>
+      <div class="card slide-up delay">
+        <h3>Workforce Development</h3>
+        <p>Career readiness programs that prepare youth for professional success.</p>
+        <a href="programs.html#workforce" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+      </div>
+      <div class="card slide-up delay-2">
+        <h3>College & Career</h3>
+        <p>Supporting students through college preparation, applications, and career exploration.</p>
+        <a href="programs.html#college" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+      </div>
+      <div class="card slide-up">
+        <h3>Youth Leadership</h3>
+        <p>Empowering young leaders through peer mentoring, community service, and leadership development.</p>
+        <a href="programs.html#leadership" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+      </div>
+      <div class="card slide-up delay">
+        <h3>Health & Wellness</h3>
+        <p>Programs promoting physical health, mental wellness, and nutrition education.</p>
+        <a href="programs.html#wellness" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+      </div>
+      <div class="card slide-up delay-2">
+        <h3>Family Support</h3>
+        <p>Resources and support for families to help their children succeed.</p>
+        <a href="programs.html#family" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="programs.html" class="btn btn-secondary">View All Programs</a>
+    </div>
+  </section>
+
+  <!-- Upcoming Events Preview -->
+  <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; background: var(--doral-light-gray); border-radius: 12px;">
+    <h2 style="text-align: center; margin-bottom: 3rem;">Upcoming Events</h2>
+    <div id="events-preview" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <!-- Events will be loaded here -->
+    </div>
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="events.html" class="btn btn-primary">View Full Calendar</a>
+    </div>
+  </section>
+
   <!-- CALL TO ACTION -->
   <section class="cta fade-in">
     <h2>Join the Village</h2>
     <p>When students are supported, entire communities thrive.</p>
-    <a href="contact.html" class="btn btn-secondary">Get Involved</a>
+    <a href="get-involved.html" class="btn btn-secondary">Get Involved</a>
   </section>
 
   <!-- SOCIAL FOOTER -->
@@ -101,6 +196,7 @@
       <a href="#" aria-label="LinkedIn">💼</a>
     </div>
     <div class="footer-actions">
+      <a href="admin.html" class="login-btn-footer">Admin</a>
       <button id="login-btn-footer" class="login-btn-footer">Admin Login</button>
     </div>
   </footer>
@@ -122,6 +218,7 @@
   <!-- SCRIPTS -->
   <script src="script.js"></script>
   <script src="login.js"></script>
+  <script src="home-events.js"></script>
 
 </body>
 </html>

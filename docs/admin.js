@@ -118,19 +118,43 @@ function showEventForm(eventIndex = null) {
     const events = getEvents();
     const event = events[eventIndex];
     
+    // Populate all fields
     document.getElementById('event-title').value = event.title || '';
     document.getElementById('event-date').value = event.date || '';
-    document.getElementById('event-names').value = event.names || '';
-    document.getElementById('event-text').value = event.text || '';
+    document.getElementById('event-start-time').value = event.startDateTime ? new Date(event.startDateTime).toISOString().slice(0, 16) : '';
+    document.getElementById('event-end-time').value = event.endDateTime ? new Date(event.endDateTime).toISOString().slice(0, 16) : '';
+    document.getElementById('event-location-name').value = event.locationName || '';
+    document.getElementById('event-location-address').value = event.locationAddress || '';
+    document.getElementById('event-virtual-link').value = event.virtualLink || '';
+    document.getElementById('event-summary').value = event.summary || '';
+    document.getElementById('event-text').value = event.description || event.text || '';
+    document.getElementById('event-audience').value = event.audienceTags ? (Array.isArray(event.audienceTags) ? event.audienceTags.join(', ') : event.audienceTags) : '';
+    document.getElementById('event-program-tags').value = event.programTags ? (Array.isArray(event.programTags) ? event.programTags.join(', ') : event.programTags) : '';
+    document.getElementById('event-host').value = event.host || '';
+    document.getElementById('event-capacity').value = event.capacity || '';
+    document.getElementById('event-registration-url').value = event.registrationUrl || '';
+    document.getElementById('event-status').value = event.status || 'published';
     
     if (formTitle) formTitle.textContent = 'Edit Event';
     if (deleteBtn) deleteBtn.style.display = 'inline-block';
   } else {
     form.dataset.eventIndex = '';
+    // Clear all fields
     document.getElementById('event-title').value = '';
     document.getElementById('event-date').value = '';
-    document.getElementById('event-names').value = '';
+    document.getElementById('event-start-time').value = '';
+    document.getElementById('event-end-time').value = '';
+    document.getElementById('event-location-name').value = '';
+    document.getElementById('event-location-address').value = '';
+    document.getElementById('event-virtual-link').value = '';
+    document.getElementById('event-summary').value = '';
     document.getElementById('event-text').value = '';
+    document.getElementById('event-audience').value = '';
+    document.getElementById('event-program-tags').value = '';
+    document.getElementById('event-host').value = '';
+    document.getElementById('event-capacity').value = '';
+    document.getElementById('event-registration-url').value = '';
+    document.getElementById('event-status').value = 'published';
     
     if (formTitle) formTitle.textContent = 'Create New Event';
     if (deleteBtn) deleteBtn.style.display = 'none';
@@ -150,8 +174,19 @@ function saveEvent() {
   const eventIndex = form.dataset.eventIndex;
   const title = document.getElementById('event-title').value.trim();
   const date = document.getElementById('event-date').value;
-  const names = document.getElementById('event-names').value.trim();
-  const text = document.getElementById('event-text').value.trim();
+  const startDateTime = document.getElementById('event-start-time').value;
+  const endDateTime = document.getElementById('event-end-time').value;
+  const locationName = document.getElementById('event-location-name').value.trim();
+  const locationAddress = document.getElementById('event-location-address').value.trim();
+  const virtualLink = document.getElementById('event-virtual-link').value.trim();
+  const summary = document.getElementById('event-summary').value.trim();
+  const description = document.getElementById('event-text').value.trim();
+  const audienceTags = document.getElementById('event-audience').value.split(',').map(t => t.trim()).filter(t => t);
+  const programTags = document.getElementById('event-program-tags').value.split(',').map(t => t.trim()).filter(t => t);
+  const host = document.getElementById('event-host').value.trim();
+  const capacity = document.getElementById('event-capacity').value ? parseInt(document.getElementById('event-capacity').value) : null;
+  const registrationUrl = document.getElementById('event-registration-url').value.trim();
+  const status = document.getElementById('event-status').value;
 
   if (!title || !date) {
     alert('Please fill in at least the title and date.');
@@ -159,7 +194,33 @@ function saveEvent() {
   }
 
   const events = getEvents();
-  const eventData = { title, date, names, text };
+  
+  // Generate ID if new event
+  const eventId = eventIndex !== '' && eventIndex !== null 
+    ? events[parseInt(eventIndex)].id 
+    : title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '-' + Date.now();
+
+  const eventData = {
+    id: eventId,
+    title,
+    date: date || (startDateTime ? startDateTime.split('T')[0] : null),
+    startDateTime: startDateTime || null,
+    endDateTime: endDateTime || null,
+    locationName: locationName || null,
+    locationAddress: locationAddress || null,
+    virtualLink: virtualLink || null,
+    summary: summary || null,
+    description: description || null,
+    text: description || summary || null, // For backward compatibility
+    audienceTags: audienceTags.length > 0 ? audienceTags : null,
+    programTags: programTags.length > 0 ? programTags : null,
+    host: host || null,
+    capacity: capacity || null,
+    registrationUrl: registrationUrl || null,
+    status: status || 'published',
+    views: eventIndex !== '' && eventIndex !== null ? (events[parseInt(eventIndex)].views || 0) : 0,
+    likes: eventIndex !== '' && eventIndex !== null ? (events[parseInt(eventIndex)].likes || 0) : 0
+  };
 
   if (eventIndex !== '' && eventIndex !== null) {
     // Update existing event

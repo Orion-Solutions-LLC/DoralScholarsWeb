@@ -16,9 +16,10 @@
         </a>
       </li>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Learn about us</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
       <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="admin.html" class="active">Admin</a></li>
     </ul>
   </nav>
 
@@ -54,8 +55,73 @@
         </div>
 
         <div class="form-group">
-          <label for="event-text">Description/Text</label>
-          <textarea id="event-text" name="text" placeholder="Enter event description"></textarea>
+          <label for="event-start-time">Start Time</label>
+          <input type="datetime-local" id="event-start-time" name="startDateTime">
+        </div>
+
+        <div class="form-group">
+          <label for="event-end-time">End Time</label>
+          <input type="datetime-local" id="event-end-time" name="endDateTime">
+        </div>
+
+        <div class="form-group">
+          <label for="event-location-name">Location Name</label>
+          <input type="text" id="event-location-name" name="locationName" placeholder="e.g., Community Center">
+        </div>
+
+        <div class="form-group">
+          <label for="event-location-address">Location Address</label>
+          <input type="text" id="event-location-address" name="locationAddress" placeholder="Full address">
+        </div>
+
+        <div class="form-group">
+          <label for="event-virtual-link">Virtual Link (optional)</label>
+          <input type="url" id="event-virtual-link" name="virtualLink" placeholder="https://...">
+        </div>
+
+        <div class="form-group">
+          <label for="event-summary">Summary (for cards)</label>
+          <textarea id="event-summary" name="summary" placeholder="Short summary for event cards" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="event-text">Full Description</label>
+          <textarea id="event-text" name="text" placeholder="Enter full event description" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="event-audience">Audience Tags (comma-separated)</label>
+          <input type="text" id="event-audience" name="audienceTags" placeholder="student, parent, educator, community">
+          <small style="color: #666;">Separate multiple tags with commas</small>
+        </div>
+
+        <div class="form-group">
+          <label for="event-program-tags">Program Tags (comma-separated)</label>
+          <input type="text" id="event-program-tags" name="programTags" placeholder="Academic, Workforce, Wellness">
+          <small style="color: #666;">Separate multiple tags with commas</small>
+        </div>
+
+        <div class="form-group">
+          <label for="event-host">Host/Organizer</label>
+          <input type="text" id="event-host" name="host" placeholder="Name of host or organization">
+        </div>
+
+        <div class="form-group">
+          <label for="event-capacity">Capacity (optional)</label>
+          <input type="number" id="event-capacity" name="capacity" placeholder="Maximum attendees">
+        </div>
+
+        <div class="form-group">
+          <label for="event-registration-url">Registration URL (optional)</label>
+          <input type="url" id="event-registration-url" name="registrationUrl" placeholder="https://...">
+        </div>
+
+        <div class="form-group">
+          <label for="event-status">Status</label>
+          <select id="event-status" name="status">
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+          </select>
         </div>
 
         <div class="form-actions">

@@ -5,35 +5,34 @@ on:
     branches:
       - main
   workflow_dispatch:
-  repository_dispatch:
-    types: [update-events]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-    
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       
-      - name: Create events.json from localStorage data
-        run: |
-          # This step would need to be customized based on how events are stored
-          # For now, we'll create a placeholder that can be updated
-          echo '[]' > docs/events.json || true
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
       
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          cname: false
-
+        id: deployment
+        uses: actions/deploy-pages@v4
