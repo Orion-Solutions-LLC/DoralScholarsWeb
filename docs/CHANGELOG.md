@@ -1,20 +1,90 @@
 # Doral Scholars Website - Change Log
 
-## Implementation Progress
+## December 31, 2025 - Complete Site Redesign
+
+### Design System Overhaul
+Based on modern web design best practices for community/nonprofit websites, the entire site has been redesigned with a focus on:
+
+- **Typography**: Replaced Dela Gothic One with Fraunces (serif) for headlines, Inter for body text - more distinctive and professional
+- **Color System**: Cleaner implementation with CSS custom properties, proper contrast ratios
+- **Layout**: New CSS grid-based layouts, consistent spacing scale, improved visual hierarchy
+- **Components**: Refined card styles, buttons, forms, and interactive elements
+
+### Key Changes
+
+#### Visual Design
+- ✅ Removed gimmicky "stylus cursor" animation
+- ✅ Removed emoji icons, replaced with proper SVG icons throughout
+- ✅ New cleaner background (warm cream `#FFFCF7`) instead of orange tint
+- ✅ Improved card differentiation with `--featured` and `--accent` variants
+- ✅ Better section separation with `section--tinted` class
+- ✅ Professional shadow system with consistent depth
+
+#### Footer Redesign  
+- ✅ Comprehensive 4-column footer with:
+  - Brand section with logo, mission statement, social links
+  - Programs quick links
+  - Get Involved quick links  
+  - Contact information with icons
+- ✅ Proper SVG social media icons (Instagram, Facebook, Twitter/X, LinkedIn)
+- ✅ Footer bottom with copyright and legal links
+- ✅ Admin login moved to subtle footer link
+
+#### Navigation Improvements
+- ✅ Simplified dropdown menus (reduced items)
+- ✅ Cleaner dropdown styling with blur backdrop
+- ✅ Better visual feedback on hover states
+- ✅ Improved mobile responsiveness
+
+#### Homepage Enhancements
+- ✅ Hero section with better visual hierarchy
+- ✅ Impact stats with animated counters
+- ✅ "Leave Different" module styling
+- ✅ Featured programs grid
+- ✅ Role-based "Find Your Path" section
+
+#### All Pages Updated
+- ✅ index.html - Homepage
+- ✅ about.html - About page with mission, values, slider
+- ✅ programs.html - Programs with path selector
+- ✅ community.html - Success stories and testimonials
+- ✅ events.html - Events calendar and list
+- ✅ contact.html - Contact form with info card
+- ✅ get-involved.html - Registration and donation
+- ✅ resources.html - Resource categories
+
+### Technical Improvements
+- ✅ CSS custom properties for theming
+- ✅ Removed inline styles where possible
+- ✅ Cleaner JavaScript (removed stylus cursor code)
+- ✅ Proper scroll progress bar implementation
+- ✅ Better animation handling with Intersection Observer
+
+### Design Principles Applied
+Following modern nonprofit website best practices:
+1. **Trust-building design** - Professional, polished appearance
+2. **Clear visual hierarchy** - Easy scanning and navigation
+3. **Mission-focused narrative** - "Leave Different" storytelling throughout
+4. **Multiple CTAs** - Role-based paths for different audiences
+5. **Social proof** - Testimonials and impact stats
+6. **Accessible design** - Proper contrast, focus states, semantic HTML
+
+---
+
+## Previous Implementation (Before Redesign)
 
 ### Completed
 - ✅ Complete site plan and information architecture document
 - ✅ Design system specification (colors, typography, spacing, components)
-- ✅ Navigation structure with dropdown menus (Home, About, Programs, Resources, Community, Get Involved, Events)
-- ✅ Programs hub page with category grid and filtering by audience type
+- ✅ Navigation structure with dropdown menus
+- ✅ Programs hub page with category grid and filtering
 - ✅ Resources page with resource categories
 - ✅ Community page with success stories and testimonials
 - ✅ Get Involved page with registration flows
 - ✅ "Leave Different" narrative modules across key pages
 - ✅ Enhanced Events page structure (calendar/list views, filters)
 - ✅ Event detail pages with views/likes tracking
-- ✅ Views/likes tracking system (localStorage-based with rate limiting)
-- ✅ Updated all pages with new navigation structure
+- ✅ Views/likes tracking system (localStorage-based)
 - ✅ Home page enhancements with featured programs and events preview
 
 ### In Progress
@@ -27,35 +97,6 @@
 - ⏳ GitHub API integration for CMS
 - ⏳ Serverless endpoint for views/likes (optional enhancement)
 - ⏳ Admin dashboard for metrics
-
-## Key Features Implemented
-
-### Navigation
-- Mega-menu dropdown for Programs with all 8 categories
-- Consistent navigation across all pages
-- Footer with admin link
-
-### Events System
-- Calendar view with month navigation
-- List view with event cards
-- Filters by audience and type
-- Past events archive toggle
-- Event detail pages with full information
-- Views tracking (deduplicated by day)
-- Likes tracking (rate-limited to prevent spam)
-- Share functionality (Facebook, Twitter, copy link)
-
-### Design System
-- Brand colors implemented (Red #E21833, Yellow #FFD200, etc.)
-- Typography: Dela Gothic One for headlines, DM Sans for body
-- Component library: cards, buttons, filters, calendar, event cards
-- Responsive design considerations
-
-### Content Structure
-- Programs organized into 8 categories
-- Each category has 5 programs listed
-- "Leave Different" modules on key pages
-- Impact stats and testimonials
 
 ## Technical Notes
 
@@ -74,13 +115,3 @@
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - localStorage for data persistence
 - Responsive design for mobile/tablet/desktop
-
-## Next Steps
-
-1. Enhance admin.js to support full event schema
-2. Create GitHub Actions workflow for deployment
-3. Add sitemap.xml and robots.txt
-4. Add structured data (JSON-LD) for events
-5. Create program detail template pages
-6. Optional: Set up serverless endpoint for metrics
-
