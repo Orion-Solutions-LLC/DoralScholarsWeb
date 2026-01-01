@@ -82,6 +82,49 @@ if (counters.length > 0) {
   });
 }
 
+// Impact Numbers Count Up Animation
+const impactNumbers = document.querySelectorAll('.impact-number');
+
+if (impactNumbers.length > 0) {
+  const impactObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        const numberEl = entry.target;
+        if (!numberEl.dataset.animated) {
+          numberEl.dataset.animated = 'true';
+          const target = parseInt(numberEl.dataset.target);
+          const suffix = numberEl.dataset.suffix || '';
+          let count = 0;
+          
+          // Fast animation - 1.5 seconds
+          const duration = 1500;
+          const steps = 60;
+          const stepTime = duration / steps;
+          const increment = target / steps;
+          
+          const update = () => {
+            count += increment;
+            if(count >= target) {
+              numberEl.textContent = target + suffix;
+            } else {
+              numberEl.textContent = Math.floor(count) + suffix;
+              setTimeout(update, stepTime);
+            }
+          };
+          update();
+        }
+        impactObserver.unobserve(numberEl);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  impactNumbers.forEach(number => {
+    // Initialize to 0
+    number.textContent = '0';
+    impactObserver.observe(number);
+  });
+}
+
 const stylus = document.getElementById('stylus-pointer');
 
 // Function to check hover over interactive elements

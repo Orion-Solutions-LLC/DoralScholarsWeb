@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
   progressBar.className = 'scroll-progress';
   document.body.appendChild(progressBar);
   
-  // Background color variables
+  // Background color variables - more vibrant orange to red-orange
   const bgColors = {
-    start: '#fef5f6',      // --doral-bg-off-red
-    light: '#fdf0f2',      // --doral-bg-light-red
-    warm: '#fef8f9',       // --doral-bg-warm
-    mid: '#fce8eb',       // Medium red tint
-    deep: '#f9d5da'       // Deeper red tint
+    start: '#fff4e6',      // Light orange tint
+    light: '#ffe8d6',      // Warm orange
+    warm: '#ffddd0',       // Orange-red
+    mid: '#ffc4b3',       // Medium red-orange
+    deep: '#ffa88f'       // Deep red-orange
   };
 
   let lastScroll = 0;
