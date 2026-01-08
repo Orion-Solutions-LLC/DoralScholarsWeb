@@ -665,7 +665,7 @@ nav .donate-btn:hover {
 .program-category-hover-grid {
   display: flex;
   gap: var(--space-md);
-  min-height: 600px;
+  min-height: 300px;
   margin-top: var(--space-xl);
 }
 
@@ -693,12 +693,12 @@ nav .donate-btn:hover {
   opacity: 1;
   height: auto;
   overflow: visible;
-  padding: var(--space-xl);
+  padding: var(--space-lg);
 }
 
 .program-category-column:nth-child(2) .program-category-header {
-  min-height: 120px;
-  padding: var(--space-xl);
+  min-height: 80px;
+  padding: var(--space-lg);
 }
 
 .program-category-column:nth-child(2) .program-category-header h3 {
@@ -716,12 +716,12 @@ nav .donate-btn:hover {
   opacity: 1 !important;
   height: auto !important;
   overflow: visible !important;
-  padding: var(--space-xl) !important;
+  padding: var(--space-lg) !important;
 }
 
 .program-category-column.is-open .program-category-header {
-  min-height: 120px !important;
-  padding: var(--space-xl) !important;
+  min-height: 80px !important;
+  padding: var(--space-lg) !important;
 }
 
 .program-category-column.is-open .program-category-header h3 {
@@ -741,12 +741,12 @@ nav .donate-btn:hover {
   opacity: 1;
   height: auto;
   overflow: visible;
-  padding: var(--space-xl);
+  padding: var(--space-lg);
 }
 
 .program-category-column:hover .program-category-header {
-  min-height: 120px;
-  padding: var(--space-xl);
+  min-height: 80px;
+  padding: var(--space-lg);
 }
 
 .program-category-column:hover .program-category-header h3 {
@@ -761,10 +761,10 @@ nav .donate-btn:hover {
 }
 
 .program-category-header {
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   background: linear-gradient(135deg, var(--doral-red) 0%, var(--doral-burgundy) 100%);
   color: var(--white);
-  min-height: 120px;
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -788,15 +788,15 @@ nav .donate-btn:hover {
   z-index: 1;
 }
 
-.program-category-column:not(:hover) .program-category-header h3 {
-  font-size: 1rem;
-  writing-mode: vertical-rl;
+.program-category-column:not(:hover):not(.is-open) .program-category-header h3 {
+  font-size: 0.875rem;
+  writing-mode: horizontal-tb;
   text-orientation: mixed;
-  transform: rotate(180deg);
+  transform: none;
 }
 
 .program-category-content {
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -813,8 +813,8 @@ nav .donate-btn:hover {
 }
 
 .program-category-column:not(:hover):not(.is-open) .program-category-header {
-  min-height: 100%;
-  padding: var(--space-lg);
+  min-height: 80px;
+  padding: var(--space-md);
 }
 
 .program-category-column:not(:hover):not(.is-open) .program-category-header h3 {
@@ -826,30 +826,31 @@ nav .donate-btn:hover {
 
 .program-category-content p {
   color: var(--gray-600);
-  margin-bottom: var(--space-md);
-  font-size: 1.125rem;
+  margin-bottom: var(--space-sm);
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
 .program-category-content .program-count {
   color: var(--gray-500);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .program-subcategories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
   flex: 1;
 }
 
 .program-subcategory h4 {
   color: var(--doral-red);
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   font-family: var(--font-body);
 }
 
@@ -860,10 +861,11 @@ nav .donate-btn:hover {
 
 .program-subcategory ul li {
   position: relative;
-  padding-left: var(--space-lg);
-  margin-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-xs);
   color: var(--gray-600);
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
 }
 
 .program-subcategory ul li::before {
