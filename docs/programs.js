@@ -29,7 +29,7 @@ const roleCTAs = {
 
 document.addEventListener('DOMContentLoaded', function() {
   const pathButtons = document.querySelectorAll('.path-selector-btn');
-  const programCards = document.querySelectorAll('.program-category-card');
+  const programColumns = document.querySelectorAll('.program-category-column');
   const roleCTABand = document.getElementById('role-cta-band');
   const roleCTAContent = document.getElementById('role-cta-content');
 
@@ -42,15 +42,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const selectedPath = this.dataset.path;
 
       // Filter programs
-      programCards.forEach(card => {
+      programColumns.forEach(column => {
         if (selectedPath === 'all') {
-          card.style.display = 'block';
+          column.style.display = 'flex';
         } else {
-          const cardCategories = card.dataset.categories.split(',');
-          if (cardCategories.includes(selectedPath)) {
-            card.style.display = 'block';
+          const columnCategories = column.dataset.categories.split(',');
+          if (columnCategories.includes(selectedPath)) {
+            column.style.display = 'flex';
           } else {
-            card.style.display = 'none';
+            column.style.display = 'none';
           }
         }
       });
