@@ -4,18 +4,6 @@
 function generateNavigation(currentPage = '') {
   const navStructure = {
     home: { href: 'index.html', label: 'Home' },
-    barrierRemoval: {
-      href: 'barrier-removal.html',
-      label: 'Barrier Removal',
-      dropdown: [
-        { href: 'barrier-removal.html#emergency-services', label: 'Emergency Services' },
-        { href: 'barrier-removal.html#crisis-support', label: 'Crisis Support' },
-        { href: 'barrier-removal.html#housing-assistance', label: 'Housing Assistance' },
-        { href: 'barrier-removal.html#utility-assistance', label: 'Utility Assistance' },
-        { href: 'barrier-removal.html#food-security', label: 'Food Security' },
-        { href: 'barrier-removal.html#emergency-transportation', label: 'Emergency Transportation' }
-      ]
-    },
     programs: {
       href: 'programs.html',
       label: 'Programs',
