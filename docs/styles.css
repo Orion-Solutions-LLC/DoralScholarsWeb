@@ -2039,4 +2039,19 @@ main {
   color: var(--black);
 }
 
+/* Admin Portal Button */
+.btn-admin {
+  background: #2563eb; /* clean modern blue */
+  color: #ffffff;
+  border: 2px solid #2563eb;
+}
+
+.btn-admin:hover {
+  background: #1e40af; /* darker blue on hover */
+  border-color: #1e40af;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
 
