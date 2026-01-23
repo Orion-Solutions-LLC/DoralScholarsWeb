@@ -2027,3 +2027,16 @@ main {
   }
 }
 
+/* Admin Portal Button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--doral-yellow);
+  color: var(--doral-yellow);
+}
+
+.btn-outline:hover {
+  background: var(--doral-yellow);
+  color: var(--black);
+}
+
+
