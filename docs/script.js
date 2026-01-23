@@ -162,6 +162,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+
+//new stuff
+const reveals = document.querySelectorAll(".reveal");
+
+const revealOnScroll = () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight * 0.85;
+
+    if (top < triggerPoint) {
+      el.classList.add("active");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+////////////////////////////////////////////////////
+
+
+
 // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
