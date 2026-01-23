@@ -1,118 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doral Scholars - Empowering Youth Through Education</title>
-  <meta name="description" content="Doral Scholars provides comprehensive youth development programs including academic support, mentorship, career readiness, and family engagement for students and families.">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doral Scholars</title>
+
+<style>
+/* ===== RESET ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#000; color:#fff; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.85));
+  z-index:-1;
+}
+
+/* ===== HERO CONTENT ===== */
+.hero-content {
+  max-width: 1000px;
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* ===== CTA BUTTONS ===== */
+.hero-cta {
+  margin-top: 48px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.btn-primary {
+  background: #f4c430;
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  background: #fff;
+  color: #000;
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== PILLAR STRUCTURE ===== */
+.pillar-structure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Roof */
+.pillar-roof {
+  width: 420px;
+  height: 120px;
+  background: linear-gradient(135deg, #f4c430, #d4a017);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+/* Columns */
+.pillar-columns {
+  display: flex;
+  gap: 36px;
+}
+
+.pillar {
+  width: 200px;
+  height: 260px;
+  background: #fff;
+  color: #111;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Base */
+.pillar-base {
+  width: 480px;
+  height: 70px;
+  background: #1b1b1b;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all .9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: .2s; }
+.delay-2 { transition-delay: .4s; }
+.delay-3 { transition-delay: .6s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .pillar-columns {
+    flex-direction: column;
+  }
+
+  .pillar {
+    width: 260px;
+  }
+
+  .pillar-roof {
+    width: 300px;
+    height: 90px;
+  }
+
+  .pillar-base {
+    width: 300px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="scroll-progress" id="scroll-progress"></div>
+<section class="hero">
 
-  <!-- NAVIGATION -->
-  <nav>
-    <ul>
-      <li class="logo">
-        <a href="index.html">
-          <img src="assets/logo.png" alt="Doral Scholars Program Logo">
-          <span class="brand-name">Doral Scholars</span>
-        </a>
-      </li>
-      <li class="home-link"><a href="index.html" class="active">Home</a></li>
-      <li class="nav-item-dropdown">
-        <a href="programs.html">Programs</a>
-        <ul class="dropdown-menu">
-          <li><a href="programs.html#academic">Academic Programs</a></li>
-          <li><a href="programs.html#workforce">Workforce Development</a></li>
-          <li><a href="programs.html#college">College & Career</a></li>
-          <li><a href="programs.html#leadership">Youth Leadership</a></li>
-          <li><a href="programs.html#wellness">Health & Wellness</a></li>
-          <li><a href="programs.html#family">Family Support</a></li>
-        </ul>
-      </li>
-      <li class="nav-item-dropdown">
-        <a href="community.html">Community</a>
-        <ul class="dropdown-menu">
-          <li><a href="community.html#success-stories">Success Stories</a></li>
-          <li><a href="community.html#testimonials">Testimonials</a></li>
-          <li><a href="community.html#program-impact">Program Impact</a></li>
-        </ul>
-      </li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="contact-btn">Contact</a></li>
-      <li><a href="get-involved.html#donate" class="donate-btn">Donate</a></li>
-    </ul>
-  </nav>
+  <video autoplay loop muted playsinline>
+    <source src="assets/videos/6ff0c5e16a504fcaa0ff3d9b18fc1795.MP4" type="video/mp4">
+  </video>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <video autoplay loop muted playsinline class="hero-background-video">
-      <source src="assets/videos/6ff0c5e16a504fcaa0ff3d9b18fc1795.MP4" type="video/mp4">
-    </video>
+  <div class="hero-content">
 
-    <div class="hero-content hero-pillars">
+    <div class="pillar-structure">
 
-      <!-- PILLAR STRUCTURE -->
-      <div class="pillar-structure">
+      <div class="pillar-roof reveal"></div>
 
-        <!-- ROOF -->
-        <div class="pillar-roof reveal"></div>
-
-        <!-- COLUMNS -->
-        <div class="pillar-columns">
-          <div class="pillar reveal">
-            <span>Academic<br>Excellence</span>
-          </div>
-
-          <div class="pillar reveal delay-1">
-            <span>Personal Growth<br>& Holistic Well-Being</span>
-          </div>
-
-          <div class="pillar reveal delay-2">
-            <span>Workforce<br>Development</span>
-          </div>
+      <div class="pillar-columns">
+        <div class="pillar reveal">
+          Academic<br>Excellence
         </div>
 
-        <!-- BASE -->
-        <div class="pillar-base reveal delay-3">
-          Maslow
+        <div class="pillar reveal delay-1">
+          Personal Growth<br>& Holistic Well-Being
         </div>
 
+        <div class="pillar reveal delay-2">
+          Workforce<br>Development
+        </div>
       </div>
 
-      <!-- CTAs -->
-      <div class="hero-cta">
-        <a href="programs.html" class="btn btn-primary btn-lg">Find My Path</a>
-        <a href="events.html" class="btn btn-white btn-lg">See Upcoming Events</a>
+      <div class="pillar-base reveal delay-3">
+        MASLOW
       </div>
 
     </div>
-  </section>
 
-  <!-- SCRIPTS -->
-  <script>
-    const reveals = document.querySelectorAll(".reveal");
+    <div class="hero-cta">
+      <a href="programs.html" class="btn btn-primary">Find My Path</a>
+      <a href="events.html" class="btn btn-white">See Upcoming Events</a>
+    </div>
 
-    function revealOnScroll() {
-      reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        const triggerPoint = window.innerHeight * 0.85;
+  </div>
+</section>
 
-        if (top < triggerPoint) {
-          el.classList.add("active");
-        }
-      });
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.85) {
+      el.classList.add("active");
     }
+  });
+}
 
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("load", revealOnScroll);
-  </script>
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
 
 </body>
 </html>
+
 
